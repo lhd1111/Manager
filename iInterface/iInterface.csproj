@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="cw\iInventoryClassInterface.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\iData\iData.csproj" />
+    <ProjectReference Include="..\vModel\vModel.csproj" />
+  </ItemGroup>
+
+</Project>
