@@ -68,8 +68,8 @@ namespace iData.rs
         public string HealthState { get; set; }
         [Display(Name = "以往病史")]
         public string MedicalHistory { get; set; }
-        [Display(Name ="上岗时间")]
-        public DateTime? PostDate { get; set; }
+        //[Display(Name ="上岗时间")]//由入职日期代替
+        //public DateTime? PostDate { get; set; }
         [Display(Name ="试用期限")]
         public int TestMonth { get; set; }
         [Display(Name = "试用期薪资")]
@@ -127,12 +127,15 @@ namespace iData.rs
         public string RsPass { get; set; }//0：未处理；1：通过；2：未通过
         [MaxLength(3)]
         public string JlPass { get; set; }//0：未处理；1：通过；2：未通过
-        [Display(Name ="是否暂存")]
+        [Display(Name ="是否暂存")]//已弃用
         public bool IsTemp { get; set; } = false;
-
+        [Display(Name = "是否试用")]
+        public bool IsTest { get; set; } = true;
+        [Display(Name = "离职日期")]
+        public DateTime? dLeaveDate { get; set; } 
         public virtual ICollection<EducationExp> EducationExps { get; set; } = new List<EducationExp>();
         public virtual ICollection<TrainExp> TrainExps { get; set; } = new List<TrainExp>();
         public virtual ICollection<WorkExp> WorkExps { get; set; } = new List<WorkExp>();
-        public virtual ICollection<Salary> Salaries { get; set; } = new List<Salary>();
+        public virtual ICollection<SalaryExp> Salaries { get; set; } = new List<SalaryExp>();
     }
 }

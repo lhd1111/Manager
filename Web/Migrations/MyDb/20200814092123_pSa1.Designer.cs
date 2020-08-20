@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200814092123_pSa1")]
+    partial class pSa1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -922,9 +924,6 @@ namespace Web.Migrations.MyDb
                     b.Property<bool>("IsTemp")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsTest")
-                        .HasColumnType("bit");
-
                     b.Property<string>("JlPass")
                         .HasColumnType("nvarchar(3)")
                         .HasMaxLength(3);
@@ -974,6 +973,9 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("OaRzId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("PostDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("PostId")
                         .HasColumnType("int");
@@ -1026,9 +1028,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("U8Id")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
-
-                    b.Property<DateTime?>("dLeaveDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("dlgzhz")
                         .HasColumnType("nvarchar(max)");

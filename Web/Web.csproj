@@ -47,6 +47,8 @@
     <Compile Remove="Migrations\MyDb\20200727053721_ctc.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20200810090705_personupt1.cs" />
     <Compile Remove="Migrations\MyDb\20200810090705_personupt1.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20200818081323_pleave.cs" />
+    <Compile Remove="Migrations\MyDb\20200818081323_pleave.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

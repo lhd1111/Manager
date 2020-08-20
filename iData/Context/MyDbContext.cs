@@ -57,7 +57,7 @@ namespace iData.Context
         public DbSet<EducationExp> EducationExps { get; set; }
         public DbSet<WorkExp> WorkExps { get; set; }
         public DbSet<TrainExp> TrainExps { get; set; }
-        public DbSet<Salary> Salaries { get; set; }
+        public DbSet<SalaryExp> Salaries { get; set; }
         public DbSet<ColToCol> ColToCols { get; set; }
 
         //技术中心
