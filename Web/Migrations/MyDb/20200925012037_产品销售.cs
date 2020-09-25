@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Web.Migrations.MyDb
 {
-    public partial class 产品销售定价 : Migration
+    public partial class 产品销售 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,23 +28,12 @@ namespace Web.Migrations.MyDb
                     fDefinePrice = table.Column<float>(maxLength: 50, nullable: false),
                     IsAgreement = table.Column<bool>(nullable: false),
                     IsInward = table.Column<bool>(nullable: false),
-                    ModelSplitCostIdId = table.Column<int>(nullable: true)
+                    ModelSplitCost = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductSale", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductSale_ModelSplitCost_ModelSplitCostIdId",
-                        column: x => x.ModelSplitCostIdId,
-                        principalTable: "ModelSplitCost",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductSale_ModelSplitCostIdId",
-                table: "ProductSale",
-                column: "ModelSplitCostIdId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -10,8 +10,8 @@ using iData.Context;
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20200925011003_销售定价改")]
-    partial class 销售定价改
+    [Migration("20200925012037_产品销售")]
+    partial class 产品销售
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

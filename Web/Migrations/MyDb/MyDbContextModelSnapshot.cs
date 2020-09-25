@@ -731,8 +731,6 @@ namespace Web.Migrations.MyDb
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ModelSplitCostId");
-
                     b.ToTable("ProductSale");
                 });
 
@@ -1654,13 +1652,6 @@ namespace Web.Migrations.MyDb
                     b.HasOne("iData.cg.Supplier", "Supplier")
                         .WithMany("SupplierCertificates")
                         .HasForeignKey("SupplierId");
-                });
-
-            modelBuilder.Entity("iData.cw.ProductSale", b =>
-                {
-                    b.HasOne("iData.cw.ModelSplitCost", "ModelSplitCost")
-                        .WithMany()
-                        .HasForeignKey("ModelSplitCostId");
                 });
 
             modelBuilder.Entity("iData.rs.Department", b =>

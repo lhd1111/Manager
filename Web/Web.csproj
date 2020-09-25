@@ -57,6 +57,10 @@
     <Compile Remove="Migrations\MyDb\20200918032532_模具分摊加s.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20200918032850_模具分摊s.cs" />
     <Compile Remove="Migrations\MyDb\20200918032850_模具分摊s.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20200925011735_产品销售.cs" />
+    <Compile Remove="Migrations\MyDb\20200925011735_产品销售.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20200925012235_产品销售关联整型.cs" />
+    <Compile Remove="Migrations\MyDb\20200925012235_产品销售关联整型.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

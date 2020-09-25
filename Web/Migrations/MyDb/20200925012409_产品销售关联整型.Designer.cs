@@ -10,8 +10,8 @@ using iData.Context;
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20200925004255_产品销售定价")]
-    partial class 产品销售定价
+    [Migration("20200925012409_产品销售关联整型")]
+    partial class 产品销售关联整型
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -685,7 +685,7 @@ namespace Web.Migrations.MyDb
                     b.Property<bool>("IsInward")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModelSplitCostIdId")
+                    b.Property<int?>("ModelSplitCostId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifyTime")
@@ -732,8 +732,6 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(50);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ModelSplitCostIdId");
 
                     b.ToTable("ProductSale");
                 });
@@ -1656,13 +1654,6 @@ namespace Web.Migrations.MyDb
                     b.HasOne("iData.cg.Supplier", "Supplier")
                         .WithMany("SupplierCertificates")
                         .HasForeignKey("SupplierId");
-                });
-
-            modelBuilder.Entity("iData.cw.ProductSale", b =>
-                {
-                    b.HasOne("iData.cw.ModelSplitCost", "ModelSplitCostId")
-                        .WithMany()
-                        .HasForeignKey("ModelSplitCostIdId");
                 });
 
             modelBuilder.Entity("iData.rs.Department", b =>

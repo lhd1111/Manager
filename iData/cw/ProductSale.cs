@@ -31,7 +31,9 @@ namespace iData.cw
         public bool IsAgreement { get; set; }
         [Display(Name = ("是否内部定价"))]
         public bool IsInward { get; set; }
+        [Display(Name = ("备注")),MaxLength(200)]
+        public string Note { get; set; }
         [Display(Name = ("模具分摊"))]
-        public ModelSplitCost ModelSplitCost { get; set; }
+        public int? ModelSplitCostId { get; set; }
     }
 }
