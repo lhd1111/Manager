@@ -88,7 +88,7 @@ namespace iData.rs
         public string HopeSalary { get; set; }
         [Display(Name = "工号"),MaxLength(10)]
         public string gh { get; set; }
-        [Display(Name = "招聘渠道"),MaxLength(10)]
+        [Display(Name = "招聘渠道"),MaxLength(20)]
         public string zpqd { get; set; }
         [Display(Name = "人员类型"),MaxLength(10)]
         //(正式工、合同工、实习生）

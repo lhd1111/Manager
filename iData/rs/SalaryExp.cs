@@ -19,6 +19,7 @@ namespace iData.rs
         public string Type { get; set; }
         public int iOrder { get; set; }
         public int requestid { get; set; }
+
         [MaxLength(50)]
         public string Note { get; set; }
     }

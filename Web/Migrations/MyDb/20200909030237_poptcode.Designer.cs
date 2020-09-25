@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200909030237_poptcode")]
+    partial class poptcode
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -587,155 +589,6 @@ namespace Web.Migrations.MyDb
                     b.ToTable("SupplierCertificate");
                 });
 
-            modelBuilder.Entity("iData.cw.ModelSplitCost", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<bool>("IsTest")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
-
-                    b.Property<string>("cCusCode")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("cCusName")
-                        .HasColumnType("nvarchar(98)")
-                        .HasMaxLength(98);
-
-                    b.Property<string>("cInvCode")
-                        .HasColumnType("nvarchar(120)")
-                        .HasMaxLength(120);
-
-                    b.Property<string>("cInvName")
-                        .HasColumnType("nvarchar(510)")
-                        .HasMaxLength(510);
-
-                    b.Property<string>("cInvStd")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<float>("fModelCost")
-                        .HasColumnType("real");
-
-                    b.Property<float>("fPrice")
-                        .HasColumnType("real");
-
-                    b.Property<int>("iModelNum")
-                        .HasColumnType("int");
-
-                    b.Property<int>("iModelNumed")
-                        .HasColumnType("int");
-
-                    b.Property<int>("sGroup")
-                        .HasColumnType("int");
-
-                    b.Property<string>("sProject")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("uDataBase")
-                        .HasColumnType("nvarchar(3)")
-                        .HasMaxLength(3);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ModelSplitCost");
-                });
-
-            modelBuilder.Entity("iData.cw.ProductSale", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<bool>("IsAgreement")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsInward")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("ModelSplitCostId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("cCusCode")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("cCusInvCode")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("cCusName")
-                        .HasColumnType("nvarchar(98)")
-                        .HasMaxLength(98);
-
-                    b.Property<string>("cInvCode")
-                        .HasColumnType("nvarchar(120)")
-                        .HasMaxLength(120);
-
-                    b.Property<string>("cInvName")
-                        .HasColumnType("nvarchar(510)")
-                        .HasMaxLength(510);
-
-                    b.Property<string>("cInvStd")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<float>("fButgetPrice")
-                        .HasColumnType("real")
-                        .HasMaxLength(50);
-
-                    b.Property<float>("fDefinePrice")
-                        .HasColumnType("real")
-                        .HasMaxLength(50);
-
-                    b.Property<float>("fTempPrice")
-                        .HasColumnType("real")
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ModelSplitCostId");
-
-                    b.ToTable("ProductSale");
-                });
-
             modelBuilder.Entity("iData.cw.Rd_Month_Pool", b =>
                 {
                     b.Property<string>("Location")
@@ -1234,8 +1087,8 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(10);
 
                     b.Property<string>("zpqd")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
 
                     b.Property<string>("zwdj")
                         .HasColumnType("nvarchar(10)")
@@ -1654,13 +1507,6 @@ namespace Web.Migrations.MyDb
                     b.HasOne("iData.cg.Supplier", "Supplier")
                         .WithMany("SupplierCertificates")
                         .HasForeignKey("SupplierId");
-                });
-
-            modelBuilder.Entity("iData.cw.ProductSale", b =>
-                {
-                    b.HasOne("iData.cw.ModelSplitCost", "ModelSplitCost")
-                        .WithMany()
-                        .HasForeignKey("ModelSplitCostId");
                 });
 
             modelBuilder.Entity("iData.rs.Department", b =>

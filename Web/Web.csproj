@@ -49,6 +49,14 @@
     <Compile Remove="Migrations\MyDb\20200810090705_personupt1.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20200818081323_pleave.cs" />
     <Compile Remove="Migrations\MyDb\20200818081323_pleave.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20200918031319_模具分摊.cs" />
+    <Compile Remove="Migrations\MyDb\20200918031319_模具分摊.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20200918031455_模具分摊.cs" />
+    <Compile Remove="Migrations\MyDb\20200918031455_模具分摊.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20200918032532_模具分摊加s.cs" />
+    <Compile Remove="Migrations\MyDb\20200918032532_模具分摊加s.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20200918032850_模具分摊s.cs" />
+    <Compile Remove="Migrations\MyDb\20200918032850_模具分摊s.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -24,6 +24,8 @@ namespace iData.System
         public string RsName { get; set; }
         [Display(Name = "Oa账户名"),MaxLength(20)]
         public string OaName { get; set; }
+        [Display(Name ="用户id")]
+        public int PersonId { get; set; }
         [ForeignKey("DepartmentId")]
         public virtual Department Department { get; set; }
 

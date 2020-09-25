@@ -10,6 +10,11 @@ namespace iData.cg
     [Table("PurchaseOrder")]
     public class PurchaseOrder:Base
     {
+        [Display(Name = "入库单编号"), MaxLength(30)]
+        public string cCode { get; set; }
+        [Display(Name = "采购类型"), MaxLength(10)]
+        //01.项目采购;02.批量采购;03.零星采购,04.办公采购;05.让步接收入库
+        public string cPTCode { get; set; }
         [Display(Name="入库单号"),MaxLength(30)]
         public int RdRecordId { get; set; }
         [Display(Name = "入库单子表")]

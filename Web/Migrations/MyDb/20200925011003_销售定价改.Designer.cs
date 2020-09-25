@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200925011003_销售定价改")]
+    partial class 销售定价改
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -683,7 +685,7 @@ namespace Web.Migrations.MyDb
                     b.Property<bool>("IsInward")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ModelSplitCostId")
+                    b.Property<int>("ModelSplitCost")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifyTime")
@@ -730,8 +732,6 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(50);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ModelSplitCostId");
 
                     b.ToTable("ProductSale");
                 });
@@ -1654,13 +1654,6 @@ namespace Web.Migrations.MyDb
                     b.HasOne("iData.cg.Supplier", "Supplier")
                         .WithMany("SupplierCertificates")
                         .HasForeignKey("SupplierId");
-                });
-
-            modelBuilder.Entity("iData.cw.ProductSale", b =>
-                {
-                    b.HasOne("iData.cw.ModelSplitCost", "ModelSplitCost")
-                        .WithMany()
-                        .HasForeignKey("ModelSplitCostId");
                 });
 
             modelBuilder.Entity("iData.rs.Department", b =>
