@@ -33,6 +33,8 @@ namespace iData.cw
         public bool IsInward { get; set; }
         [Display(Name = ("备注")),MaxLength(200)]
         public string Note { get; set; }
+        [Display(Name = "库别"), MaxLength(3)]
+        public string uDataBase { get; set; }
         [Display(Name = ("模具分摊"))]
         public int? ModelSplitCostId { get; set; }
     }

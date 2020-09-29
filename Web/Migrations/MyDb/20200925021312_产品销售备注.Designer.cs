@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200925021312_产品销售备注")]
+    partial class 产品销售备注
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -732,10 +734,6 @@ namespace Web.Migrations.MyDb
                     b.Property<float>("fTempPrice")
                         .HasColumnType("real")
                         .HasMaxLength(50);
-
-                    b.Property<string>("uDataBase")
-                        .HasColumnType("nvarchar(3)")
-                        .HasMaxLength(3);
 
                     b.HasKey("Id");
 
