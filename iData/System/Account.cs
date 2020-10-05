@@ -26,6 +26,8 @@ namespace iData.System
         public string OaName { get; set; }
         [Display(Name ="用户id")]
         public int PersonId { get; set; }
+        [Display(Name = "微信openid"), MaxLength(32)]
+        public string wxOpenId { get; set; }
         [ForeignKey("DepartmentId")]
         public virtual Department Department { get; set; }
 

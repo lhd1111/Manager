@@ -81,7 +81,8 @@ namespace iData.Context
         public DbSet<SalesReport> SalesReports { get; set; }
         public DbSet<ModelSplitCost> ModelSplitCosts { get; set; }
         public DbSet<ProductSale> ProductSales { get; set; }
-        
+        public DbSet<SalesFreight> SalesFreights { get; set; }
+
 
         //模具
         public DbSet<MouldState> MouldStates{get;set;}

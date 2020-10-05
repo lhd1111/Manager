@@ -25,6 +25,8 @@ namespace iData.cw
         public float fFreight { get; set; }
         [Display(Name = "三方运费")]
         public float fOtherFreight { get; set; }
+        [Display(Name = ("备注")), MaxLength(200)]
+        public string Note { get; set; }
         [Display(Name = "库别"), MaxLength(3)]
         public string uDataBase { get; set; }
     }
