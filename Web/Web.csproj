@@ -61,6 +61,12 @@
     <Compile Remove="Migrations\MyDb\20200925011735_产品销售.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20200925012235_产品销售关联整型.cs" />
     <Compile Remove="Migrations\MyDb\20200925012235_产品销售关联整型.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20201006061150_新增人员审批意见.cs" />
+    <Compile Remove="Migrations\MyDb\20201006061150_新增人员审批意见.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20201008001217_新增wechat用户.cs" />
+    <Compile Remove="Migrations\MyDb\20201008001217_新增wechat用户.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20201014002428_puapp.cs" />
+    <Compile Remove="Migrations\MyDb\20201014002428_puapp.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

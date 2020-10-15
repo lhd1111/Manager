@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201014002721_oa采购传u8")]
+    partial class oa采购传u8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -319,6 +321,10 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<string>("DataBase")
+                        .HasColumnType("nvarchar(3)")
+                        .HasMaxLength(3);
+
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
 
@@ -340,10 +346,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("PU_AppVouchsId")
                         .HasColumnType("int");
-
-                    b.Property<string>("cDataBase")
-                        .HasColumnType("nvarchar(3)")
-                        .HasMaxLength(3);
 
                     b.HasKey("Id");
 

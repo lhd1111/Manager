@@ -1,6 +1,7 @@
 ﻿using iData.cg;
 using iData.cw;
 using iData.mj;
+using iData.Mobile;
 using iData.rs;
 using iData.System;
 using iData.tech;
@@ -59,6 +60,7 @@ namespace iData.Context
         public DbSet<TrainExp> TrainExps { get; set; }
         public DbSet<SalaryExp> Salaries { get; set; }
         public DbSet<ColToCol> ColToCols { get; set; }
+        public DbSet<LeadIdea> LeadIdeas { get; set; }
 
         //技术中心
         public DbSet<bom> Boms { get; set; }
@@ -76,6 +78,7 @@ namespace iData.Context
         public DbSet<SinglePrice> SinglePrices { get; set; }
         public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
         public DbSet<MaterialSplitCost> MaterialSplitCosts { get; set; }
+        public DbSet<PU_AppVouch> PU_AppVouchs { get; set; }
 
         //财务
         public DbSet<SalesReport> SalesReports { get; set; }
@@ -86,5 +89,9 @@ namespace iData.Context
 
         //模具
         public DbSet<MouldState> MouldStates{get;set;}
+
+
+        //移动账号
+        public DbSet<WeChatUser> WeChatUsers { get; set; }
     }
 }
