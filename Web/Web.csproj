@@ -67,6 +67,8 @@
     <Compile Remove="Migrations\MyDb\20201008001217_新增wechat用户.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20201014002428_puapp.cs" />
     <Compile Remove="Migrations\MyDb\20201014002428_puapp.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20201015021839_应发合计.cs" />
+    <Compile Remove="Migrations\MyDb\20201015021839_应发合计.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

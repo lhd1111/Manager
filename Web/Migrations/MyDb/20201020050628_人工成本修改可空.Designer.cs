@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201020050628_人工成本修改可空")]
+    partial class 人工成本修改可空
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1204,17 +1206,7 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<string>("mType")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
                     b.Property<float>("yf")
-                        .HasColumnType("real");
-
-                    b.Property<float>("yfqt")
-                        .HasColumnType("real");
-
-                    b.Property<float>("yfrs")
                         .HasColumnType("real");
 
                     b.HasKey("Id");
@@ -1429,10 +1421,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("cLeaveReson")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
                     b.Property<DateTime?>("dLeaveDate")
                         .HasColumnType("datetime2");
 
@@ -1480,8 +1468,8 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(10);
 
                     b.Property<string>("zpqd")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
                     b.Property<string>("zwdj")
                         .HasColumnType("nvarchar(10)")

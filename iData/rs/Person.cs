@@ -88,7 +88,7 @@ namespace iData.rs
         public string HopeSalary { get; set; }
         [Display(Name = "工号"),MaxLength(10)]
         public string gh { get; set; }
-        [Display(Name = "招聘渠道"),MaxLength(20)]
+        [Display(Name = "招聘渠道"),MaxLength(50)]
         public string zpqd { get; set; }
         [Display(Name = "人员类型"),MaxLength(10)]
         //(正式工、合同工、实习生）
@@ -133,6 +133,8 @@ namespace iData.rs
         public bool IsTest { get; set; } = true;
         [Display(Name = "离职日期")]
         public DateTime? dLeaveDate { get; set; } 
+        [Display(Name ="离职原因"),MaxLength(10)]
+        public string cLeaveReson { get; set; }
         public virtual ICollection<EducationExp> EducationExps { get; set; } = new List<EducationExp>();
         public virtual ICollection<TrainExp> TrainExps { get; set; } = new List<TrainExp>();
         public virtual ICollection<WorkExp> WorkExps { get; set; } = new List<WorkExp>();

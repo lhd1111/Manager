@@ -8,6 +8,7 @@ using iData.tech;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace iData.Context
@@ -60,8 +61,10 @@ namespace iData.Context
         public DbSet<TrainExp> TrainExps { get; set; }
         public DbSet<SalaryExp> Salaries { get; set; }
         public DbSet<ColToCol> ColToCols { get; set; }
+        [Display(Name ="微信意见")]
         public DbSet<LeadIdea> LeadIdeas { get; set; }
-
+        [Display(Name = "人工成本")]
+        public DbSet<LaborCost> LaborCosts { get; set; }
         //技术中心
         public DbSet<bom> Boms { get; set; }
         public DbSet<Project> Projects { get; set; }
