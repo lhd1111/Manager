@@ -65,6 +65,8 @@ namespace iData.Context
         public DbSet<LeadIdea> LeadIdeas { get; set; }
         [Display(Name = "人工成本")]
         public DbSet<LaborCost> LaborCosts { get; set; }
+        [Display(Name = "离职成本")]
+        public DbSet<LeaveCost> LeaveCosts { get; set; }
         //技术中心
         public DbSet<bom> Boms { get; set; }
         public DbSet<Project> Projects { get; set; }
@@ -96,5 +98,7 @@ namespace iData.Context
 
         //移动账号
         public DbSet<WeChatUser> WeChatUsers { get; set; }
+        public DbSet<TravelReport> TravelReport { get; set; }
+
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201212083257_新增考勤id")]
+    partial class 新增考勤id
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1688,60 +1690,6 @@ namespace Web.Migrations.MyDb
                     b.HasIndex("PersonId");
 
                     b.ToTable("TrainExp");
-                });
-
-            modelBuilder.Entity("iData.rs.TravelReport", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("GongJu")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HangBan")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("MuDi")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ShiFa")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("TongXing")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TuJing")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("gh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TravelReport");
                 });
 
             modelBuilder.Entity("iData.rs.WorkExp", b =>

@@ -28,6 +28,10 @@ namespace iData.cw
         public float fModelCost { get; set; }
         [Display(Name = "分摊量纲")]
         public int iModelNum { get; set; }
+        [Display(Name = "决算金额")]
+        public float fFinalCost { get; set; } = 0;
+        [Display(Name = "决算量纲")]
+        public int iFinalNum { get; set; } = 0;
         [Display(Name = "模具单价")]
         public float fPrice { get; set; }
         [Display(Name = "已开数量")]

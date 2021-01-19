@@ -29,6 +29,8 @@ namespace iData.rs
         public string uDataBase { get; set; }
         [Display(Name ="人事数据库编号")]
         public string rDataBase { get; set; }
+        [Display(Name = "考勤数据库名称")]
+        public string kDataBase { get; set; }
         [Display(Name ="工号前缀")]
         public string oGh { get; set; }
         public virtual Department Parent { get; set; }

@@ -69,6 +69,10 @@
     <Compile Remove="Migrations\MyDb\20201014002428_puapp.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20201015021839_应发合计.cs" />
     <Compile Remove="Migrations\MyDb\20201015021839_应发合计.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20201201075202_离职成本.cs" />
+    <Compile Remove="Migrations\MyDb\20201201075202_离职成本.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210115083905_出行信息.cs" />
+    <Compile Remove="Migrations\MyDb\20210115083905_出行信息.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

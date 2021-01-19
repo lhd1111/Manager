@@ -80,6 +80,8 @@ namespace iData.rs
         public DateTime rzrq { get; set; }
         [Display(Name ="备注")]
         public string Note { get; set; }
+        [Display(Name = "考勤person_no")]
+        public int KqId { get; set; }
         [Display(Name = "OA入职id")]
         public int OaRzId { get; set; }
         [Display(Name = "U8编号"),MaxLength(20)]
