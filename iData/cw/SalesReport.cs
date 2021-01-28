@@ -9,6 +9,8 @@ namespace iData.cw
     [Table(nameof(SalesReport))]
     public class SalesReport:Base
     {
+        [MaxLength(20)]
+        public string cCusCode { get; set; }
         [MaxLength(60)]
         public string CustomerName { get; set; }
         [MaxLength(60)]

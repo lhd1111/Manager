@@ -73,6 +73,8 @@
     <Compile Remove="Migrations\MyDb\20201201075202_离职成本.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20210115083905_出行信息.cs" />
     <Compile Remove="Migrations\MyDb\20210115083905_出行信息.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210120055329_考勤班次.cs" />
+    <Compile Remove="Migrations\MyDb\20210120055329_考勤班次.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

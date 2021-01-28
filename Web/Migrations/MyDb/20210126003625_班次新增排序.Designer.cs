@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210126003625_班次新增排序")]
+    partial class 班次新增排序
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -650,50 +652,6 @@ namespace Web.Migrations.MyDb
                     b.ToTable("SupplierCertificate");
                 });
 
-            modelBuilder.Entity("iData.cw.FreightSplit", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<float>("Cost")
-                        .HasColumnType("real");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("cCusCode")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("cInvCode")
-                        .HasColumnType("nvarchar(120)")
-                        .HasMaxLength(120);
-
-                    b.Property<DateTime>("dDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("uDataBase")
-                        .HasColumnType("nvarchar(3)")
-                        .HasMaxLength(3);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FreightSplit");
-                });
-
             modelBuilder.Entity("iData.cw.ModelSplitCost", b =>
                 {
                     b.Property<int>("Id")
@@ -996,10 +954,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(60)")
                         .HasMaxLength(60);
 
-                    b.Property<string>("cCusCode")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
                     b.Property<string>("cDataBase")
                         .HasColumnType("nvarchar(3)")
                         .HasMaxLength(3);
@@ -1288,10 +1242,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ShortName")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");

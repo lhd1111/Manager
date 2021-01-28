@@ -67,6 +67,10 @@ namespace iData.Context
         public DbSet<LaborCost> LaborCosts { get; set; }
         [Display(Name = "离职成本")]
         public DbSet<LeaveCost> LeaveCosts { get; set; }
+        [Display(Name = "考勤班次")]
+        public DbSet<Frequency> Frequency { get; set; }
+        [Display(Name = "班次日期")]
+        public DbSet<CalendarKq> CalendarKq { get; set; }
         //技术中心
         public DbSet<bom> Boms { get; set; }
         public DbSet<Project> Projects { get; set; }
@@ -90,6 +94,7 @@ namespace iData.Context
         public DbSet<ModelSplitCost> ModelSplitCosts { get; set; }
         public DbSet<ProductSale> ProductSales { get; set; }
         public DbSet<SalesFreight> SalesFreights { get; set; }
+        public DbSet<FreightSplit> FreightSplits { get; set; }
 
 
         //模具

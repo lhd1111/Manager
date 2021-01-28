@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210126064236_运费分摊增加总额")]
+    partial class 运费分摊增加总额
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -674,14 +676,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("cCusCode")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("cInvCode")
-                        .HasColumnType("nvarchar(120)")
-                        .HasMaxLength(120);
-
                     b.Property<DateTime>("dDate")
                         .HasColumnType("datetime2");
 
@@ -996,10 +990,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(60)")
                         .HasMaxLength(60);
 
-                    b.Property<string>("cCusCode")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
                     b.Property<string>("cDataBase")
                         .HasColumnType("nvarchar(3)")
                         .HasMaxLength(3);
@@ -1288,10 +1278,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ShortName")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
