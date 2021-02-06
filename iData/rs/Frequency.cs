@@ -25,6 +25,8 @@ namespace iData.rs
         public DateTime EndTime { get; set; }
         [Display(Name ="半班时间")]
         public int HalfWork { get; set; }
+        [Display(Name = "是否加班"),MaxLength(2)]
+        public string IsOvertime { get; set; }
         [Display(Name = "部门id")]
         public int DepartmentId { get; set; }
         [Display(Name = "排序")]

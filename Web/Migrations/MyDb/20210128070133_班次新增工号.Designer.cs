@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210128070133_班次新增工号")]
+    partial class 班次新增工号
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1281,10 +1283,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("Interval")
                         .HasColumnType("int");
-
-                    b.Property<string>("IsOvertime")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");

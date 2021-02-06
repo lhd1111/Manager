@@ -10,6 +10,8 @@ namespace iData.rs
     public class CalendarKq:Base
     {
         public Frequency Frequency { get; set; }
+        [Display(Name ="工号")]
+        public string gh { get; set; }
         public DateTime CheckDate { get; set; }
         [Display(Name ="日历属性"),MaxLength(2)]
         public string DateProp { get; set; }
