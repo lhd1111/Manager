@@ -71,6 +71,9 @@ namespace iData.Context
         public DbSet<Frequency> Frequency { get; set; }
         [Display(Name = "班次日期")]
         public DbSet<CalendarKq> CalendarKq { get; set; }
+        [Display(Name = "计件工时")]
+        public DbSet<PersonPiece> PersonPieces { get; set; }
+
         //技术中心
         public DbSet<bom> Boms { get; set; }
         public DbSet<Project> Projects { get; set; }

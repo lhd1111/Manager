@@ -16,6 +16,10 @@ namespace iData.cw
         public string cInvCode { get; set; }
         [MaxLength(3)]
         public string uDataBase { get; set; }
+        [Display(Name ="标准运费")]
+        public float Standard { get; set; }
+        [Display(Name = "标准分摊")]
+        public float StandardSplit { get; set; }
         public float Cost { get; set; }
     }
 }
