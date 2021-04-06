@@ -24,6 +24,7 @@ namespace iData.rs
         public bool IsLeaf { get; set; } = true;
         public int oDepartmentId { get; set; }
         public int rDepartmentId { get; set; }
+        public string mDepartmentId { get; set; }
         public int uDepartmnetId { get; set; }
         [Display(Name ="u8数据库编号")]
         public string uDataBase { get; set; }

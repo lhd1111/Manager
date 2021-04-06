@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210305062333_修改人员id为账号id")]
+    partial class 修改人员id为账号id
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1083,43 +1085,6 @@ namespace Web.Migrations.MyDb
                     b.ToTable("MouldState");
                 });
 
-            modelBuilder.Entity("iData.rs.Attendance", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CheckTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CheckType")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("gh")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Attendance");
-                });
-
             modelBuilder.Entity("iData.rs.CalendarKq", b =>
                 {
                     b.Property<int>("Id")
@@ -1316,8 +1281,8 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Dinner")
-                        .HasColumnType("int");
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");
@@ -1328,16 +1293,9 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("Interval")
                         .HasColumnType("int");
 
-                    b.Property<string>("IsCdZt")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
-
                     b.Property<string>("IsOvertime")
                         .HasColumnType("nvarchar(2)")
                         .HasMaxLength(2);
-
-                    b.Property<int>("MaxOvertime")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
@@ -1352,6 +1310,9 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("ShortName")
                         .HasColumnType("nvarchar(2)")
                         .HasMaxLength(2);
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
@@ -1895,12 +1856,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("DepartmentStr")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDel")
-                        .HasColumnType("bit");
-
                     b.Property<string>("KeyPoint")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -1934,9 +1889,6 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("AccountId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("ActualTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("CheckResult")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
@@ -1960,9 +1912,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("ModifyUser")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
-
-                    b.Property<DateTime?>("PlanDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Remark")
                         .HasColumnType("nvarchar(max)");

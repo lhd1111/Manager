@@ -73,7 +73,12 @@ namespace iData.Context
         public DbSet<CalendarKq> CalendarKq { get; set; }
         [Display(Name = "计件工时")]
         public DbSet<PersonPiece> PersonPieces { get; set; }
-
+        [Display(Name = "审核标准")]
+        public DbSet<SystemCheck> SystemChecks { get; set; }
+        [Display(Name = "标准检查结果")]
+        public DbSet<SystemCheckResult> SystemCheckResults { get; set; }
+        [Display(Name = "标准检查结果")]
+        public DbSet<Attendance> Attendance { get; set; }
         //技术中心
         public DbSet<bom> Boms { get; set; }
         public DbSet<Project> Projects { get; set; }

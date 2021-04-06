@@ -75,6 +75,8 @@
     <Compile Remove="Migrations\MyDb\20210115083905_出行信息.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20210120055329_考勤班次.cs" />
     <Compile Remove="Migrations\MyDb\20210120055329_考勤班次.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210308081428_计划新增完成时间.cs" />
+    <Compile Remove="Migrations\MyDb\20210308081428_计划新增完成时间.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
