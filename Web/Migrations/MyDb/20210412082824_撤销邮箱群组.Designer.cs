@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210412082824_撤销邮箱群组")]
+    partial class 撤销邮箱群组
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1142,19 +1144,12 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<bool>("IsPass")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifyUser")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
-
-                    b.Property<string>("Reason")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
 
                     b.Property<string>("gh")
                         .HasColumnType("nvarchar(50)")
@@ -1342,109 +1337,6 @@ namespace Web.Migrations.MyDb
                     b.HasIndex("PersonId");
 
                     b.ToTable("EducationExp");
-                });
-
-            modelBuilder.Entity("iData.rs.ExternalCheck", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CheckDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Customer")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("DepartmentId")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("IsClosed")
-                        .HasColumnType("nvarchar(1)")
-                        .HasMaxLength(1);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Project")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ExternalCheck");
-                });
-
-            modelBuilder.Entity("iData.rs.ExternalCheckResult", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Analysis")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("DepartmentStrs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ExternalCheckId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("IsClosed")
-                        .HasColumnType("nvarchar(1)")
-                        .HasMaxLength(1);
-
-                    b.Property<string>("KeyPoint")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("ProblemType")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
-
-                    b.Property<string>("Solution")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SystemCheckName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ExternalCheckResult");
                 });
 
             modelBuilder.Entity("iData.rs.Frequency", b =>
@@ -1816,10 +1708,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("Relatives")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
                     b.Property<string>("RsPass")
                         .HasColumnType("nvarchar(3)")
                         .HasMaxLength(3);
@@ -1853,10 +1741,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("cLeaveReson")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
-
-                    b.Property<string>("cRelation")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
 
                     b.Property<DateTime?>("dLeaveDate")
                         .HasColumnType("datetime2");

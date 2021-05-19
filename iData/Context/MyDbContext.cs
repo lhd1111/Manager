@@ -78,7 +78,11 @@ namespace iData.Context
         [Display(Name = "标准检查结果")]
         public DbSet<SystemCheckResult> SystemCheckResults { get; set; }
         [Display(Name = "标准检查结果")]
-        public DbSet<Attendance> Attendance { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
+        [Display(Name = "外部审核")]
+        public DbSet<ExternalCheck> ExternalChecks { get; set; }
+        [Display(Name = "审核结果")]
+        public DbSet<ExternalCheckResult> ExternalCheckResults { get; set; }
         //技术中心
         public DbSet<bom> Boms { get; set; }
         public DbSet<Project> Projects { get; set; }
@@ -103,6 +107,7 @@ namespace iData.Context
         public DbSet<ProductSale> ProductSales { get; set; }
         public DbSet<SalesFreight> SalesFreights { get; set; }
         public DbSet<FreightSplit> FreightSplits { get; set; }
+        public DbSet<CompanyBank> CompanyBanks { get; set; }
 
 
         //模具

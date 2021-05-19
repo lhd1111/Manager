@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210429071016_外检新增部门信息")]
+    partial class 外检新增部门信息
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1369,10 +1371,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("IsClosed")
-                        .HasColumnType("nvarchar(1)")
-                        .HasMaxLength(1);
-
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
 
@@ -1816,10 +1814,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("Relatives")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
                     b.Property<string>("RsPass")
                         .HasColumnType("nvarchar(3)")
                         .HasMaxLength(3);
@@ -1853,10 +1847,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("cLeaveReson")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
-
-                    b.Property<string>("cRelation")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
 
                     b.Property<DateTime?>("dLeaveDate")
                         .HasColumnType("datetime2");

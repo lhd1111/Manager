@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210429074629_新增关闭选择")]
+    partial class 新增关闭选择
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1816,10 +1818,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("Relatives")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
                     b.Property<string>("RsPass")
                         .HasColumnType("nvarchar(3)")
                         .HasMaxLength(3);
@@ -1853,10 +1851,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("cLeaveReson")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
-
-                    b.Property<string>("cRelation")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
 
                     b.Property<DateTime?>("dLeaveDate")
                         .HasColumnType("datetime2");

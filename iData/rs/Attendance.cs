@@ -16,5 +16,8 @@ namespace iData.rs
         public string CheckType { get; set; }
         [MaxLength(50)]
         public string gh { get; set; }
+        [MaxLength(50),Display(Name ="原因")]
+        public string Reason { get; set; }
+        public bool IsPass { get; set; }
     }
 }

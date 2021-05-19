@@ -48,6 +48,10 @@ namespace iData.rs
         public string Contact { get; set; }
         [Display(Name ="与本人关系"), MaxLength(20)]
         public string Relation { get; set; }
+        [Display(Name = "公司亲属"), MaxLength(20)]
+        public string Relatives { get; set; }
+        [Display(Name = "亲属与本人关系"), MaxLength(20)]
+        public string cRelation { get; set; }
         [Display(Name ="紧急联系人电话"), MaxLength(20)]
         public string ContactTel { get; set; }
         [Display(Name ="学历")]
@@ -137,6 +141,15 @@ namespace iData.rs
         public DateTime? dLeaveDate { get; set; } 
         [Display(Name ="离职原因"),MaxLength(10)]
         public string cLeaveReson { get; set; }
+        [Display(Name = "车牌号码"), MaxLength(10)]
+        public string CarNumber { get; set; }
+        [Display(Name = "挪车电话"), MaxLength(11)]
+        public string MoveCarTel { get; set; }
+
+        [Display(Name = "银行名称"), MaxLength(10)]
+        public string BankName { get; set; }
+        [Display(Name = "银行卡号"), MaxLength(19)]
+        public string BankCardNumber { get; set; }
         public virtual ICollection<EducationExp> EducationExps { get; set; } = new List<EducationExp>();
         public virtual ICollection<TrainExp> TrainExps { get; set; } = new List<TrainExp>();
         public virtual ICollection<WorkExp> WorkExps { get; set; } = new List<WorkExp>();

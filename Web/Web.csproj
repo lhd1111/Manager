@@ -77,6 +77,14 @@
     <Compile Remove="Migrations\MyDb\20210120055329_考勤班次.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20210308081428_计划新增完成时间.cs" />
     <Compile Remove="Migrations\MyDb\20210308081428_计划新增完成时间.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210406003336_新增银行列表.cs" />
+    <Compile Remove="Migrations\MyDb\20210406003336_新增银行列表.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210410020240_新增挪车电话.cs" />
+    <Compile Remove="Migrations\MyDb\20210410020240_新增挪车电话.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210519073223_新增亲属关系.cs" />
+    <Compile Remove="Migrations\MyDb\20210519073223_新增亲属关系.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210519080902_新增亲属联系.cs" />
+    <Compile Remove="Migrations\MyDb\20210519080902_新增亲属联系.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
