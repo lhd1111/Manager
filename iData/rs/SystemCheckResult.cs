@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iData.System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,6 +28,6 @@ namespace iData.rs
         public DateTime? PlanDate { get; set; }
         [Display(Name = "实际完成时间")]
         public DateTime? ActualTime { get; set; }
-        
+
     }
 }

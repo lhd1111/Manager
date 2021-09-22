@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210816065958_新增扣税表")]
+    partial class 新增扣税表
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2165,10 +2167,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("DataBaseId")
-                        .HasColumnType("nvarchar(3)")
-                        .HasMaxLength(3);
-
                     b.Property<decimal>("Fy")
                         .HasColumnType("decimal(8, 2)");
 
@@ -2190,9 +2188,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("OtherKou")
                         .HasColumnType("decimal(8, 2)");
-
-                    b.Property<DateTime>("Period")
-                        .HasColumnType("datetime2");
 
                     b.Property<decimal>("Shangye")
                         .HasColumnType("decimal(8, 2)");
@@ -2331,11 +2326,11 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("F_105")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_105")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("F_106")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_106")
+                        .HasColumnType("real");
 
                     b.Property<float>("F_111")
                         .HasColumnType("real");
@@ -2343,38 +2338,47 @@ namespace Web.Migrations.MyDb
                     b.Property<float>("F_112")
                         .HasColumnType("real");
 
-                    b.Property<decimal>("F_114")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<int>("F_114")
+                        .HasColumnType("int");
 
-                    b.Property<decimal>("F_15")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_15")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("F_37")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_37")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("F_38")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_38")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("F_39")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_39")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("F_48")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_40")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("F_61")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_48")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("F_64")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_61")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("F_89")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_62")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("Gjj")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_63")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("HighTemperature")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("F_64")
+                        .HasColumnType("real");
+
+                    b.Property<float>("F_89")
+                        .HasColumnType("real");
+
+                    b.Property<float>("Gjj")
+                        .HasColumnType("real");
+
+                    b.Property<float>("HighTemperature")
+                        .HasColumnType("real");
 
                     b.Property<bool>("IsFull")
                         .HasColumnType("bit");
@@ -2386,30 +2390,30 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<decimal>("Nj")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("Nj")
+                        .HasColumnType("real");
 
                     b.Property<DateTime>("Period")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("Piece")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("Piece")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("Sb")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("Sb")
+                        .HasColumnType("real");
 
                     b.Property<float>("SbYb")
                         .HasColumnType("real");
 
-                    b.Property<decimal>("Tx")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("Tx")
+                        .HasColumnType("real");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<decimal>("Yb")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("Yb")
+                        .HasColumnType("real");
 
                     b.Property<float>("allThing")
                         .HasColumnType("real");
@@ -2417,84 +2421,84 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("cd")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("ecjj")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("ecjj")
+                        .HasColumnType("real");
 
                     b.Property<string>("gh")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<decimal>("iFull")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("iFull")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("iQt")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("iQt")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("illJ")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("illJ")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("jqJb")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("jqJb")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("jrjb")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("jrjb")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("jrjbg")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("jrjbg")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("kgqq")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("kgqq")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("kqkf")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("kqkf")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("lzTs")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("lzTs")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("lzqq")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("lzqq")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("oPiece")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("oPiece")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("oaCf")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("oaCf")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("oaGf")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("oaGf")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("oaJc")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("oaJc")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("oaJl")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("oaJl")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("rcCq")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("rcCq")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("rcJb")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("rcJb")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("rzqq")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("rzqq")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("sumColPiece")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("sumColPiece")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("thingJ")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("thingJ")
+                        .HasColumnType("real");
 
                     b.Property<float>("workZc")
                         .HasColumnType("real");
 
-                    b.Property<decimal>("xyxs")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("xyxs")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("ybSum")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("ybSum")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("zjCq")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("zjCq")
+                        .HasColumnType("real");
 
                     b.Property<int>("zt")
                         .HasColumnType("int");

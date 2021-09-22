@@ -83,6 +83,15 @@ namespace iData.Context
         public DbSet<ExternalCheck> ExternalChecks { get; set; }
         [Display(Name = "审核结果")]
         public DbSet<ExternalCheckResult> ExternalCheckResults { get; set; }
+        [Display(Name = "考勤汇总")]
+        public DbSet<SalaryAttendance> SalaryAttendances { get; set; }
+        [Display(Name = "新冠调查")]
+        public DbSet<Covid_19> Covid_19s { get; set; }
+        [Display(Name = "水电气")]
+        public DbSet<LivingCost> LivingCost { get; set; }
+        [Display(Name = "国家税务")]
+        public DbSet<PersonTax> PersonTaxes { get; set; }
+
         //技术中心
         public DbSet<bom> Boms { get; set; }
         public DbSet<Project> Projects { get; set; }
@@ -92,6 +101,8 @@ namespace iData.Context
         public DbSet<Role> Roles { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Menu> Menus { get; set; }
+        public DbSet<UpLoadFile> UpLoadFiles { get; set; }
+        public DbSet<Canlendar> Canlendars { get; set; }
 
         //采购
         public DbSet<Supplier> Suppliers { get; set; }

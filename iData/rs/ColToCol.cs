@@ -17,6 +17,6 @@ namespace iData.rs
         public string Table { get; set; }
         public string Column { get; set; }
         public string OaColumn { get; set; }
-        public string U8Column { get; set; }
+        public string rsU8DataBase { get; set; }
     }
 }

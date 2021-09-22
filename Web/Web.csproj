@@ -85,6 +85,22 @@
     <Compile Remove="Migrations\MyDb\20210519073223_新增亲属关系.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20210519080902_新增亲属联系.cs" />
     <Compile Remove="Migrations\MyDb\20210519080902_新增亲属联系.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210528025316_考勤归档.cs" />
+    <Compile Remove="Migrations\MyDb\20210528025316_考勤归档.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210528084632_班次软删除.cs" />
+    <Compile Remove="Migrations\MyDb\20210528084632_班次软删除.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210618075759_新增总长和签名.cs" />
+    <Compile Remove="Migrations\MyDb\20210618075759_新增总长和签名.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210721083914_新增生活费用表.cs" />
+    <Compile Remove="Migrations\MyDb\20210721083914_新增生活费用表.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210816071148_计税新增数据库号.cs" />
+    <Compile Remove="Migrations\MyDb\20210816071148_计税新增数据库号.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210816073707_修正考勤浮点.cs" />
+    <Compile Remove="Migrations\MyDb\20210816073707_修正考勤浮点.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210816074115_修正考勤归档数据类型.cs" />
+    <Compile Remove="Migrations\MyDb\20210816074115_修正考勤归档数据类型.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20210816094424_修正考勤归档数据类型.cs" />
+    <Compile Remove="Migrations\MyDb\20210816094424_修正考勤归档数据类型.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

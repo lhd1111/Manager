@@ -11,7 +11,10 @@ namespace iData.rs
     public class SalaryExp:Base
     {
         public Person Person { get; set; }
-        public float Money { get; set; }
+        [MaxLength(10), Display(Name = "职务等级")]
+        public string zwdj { get; set; }
+        [MaxLength(10),Display(Name ="月薪或星级")]
+        public string Money { get; set; }
         public DateTime StartDate { get; set; }
         public int DueMonth { get; set; } = 0;
         public DateTime? EndDate { get; set; }
@@ -19,7 +22,8 @@ namespace iData.rs
         public string Type { get; set; }
         public int iOrder { get; set; }
         public int requestid { get; set; }
-
+        [Display(Name = "工号"), MaxLength(10)]
+        public string gh { get; set; }
         [MaxLength(50)]
         public string Note { get; set; }
     }

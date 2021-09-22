@@ -36,6 +36,8 @@ namespace iData.rs
         public int MaxOvertime { get; set; }
         [Display(Name = "部门id")]
         public int DepartmentId { get; set; }
+        [Display(Name ="软删除")]
+        public bool IsDel { get; set; }
         [Display(Name = "排序")]
         public int iOrder { get; set; }
         public virtual ICollection<CalendarKq> CalendarKqs { get; set; } = new List<CalendarKq>();

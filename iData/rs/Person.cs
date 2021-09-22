@@ -76,8 +76,8 @@ namespace iData.rs
         //public DateTime? PostDate { get; set; }
         [Display(Name ="试用期限")]
         public int TestMonth { get; set; }
-        [Display(Name = "试用期薪资")]
-        public int TestSalary { get; set; }
+        [Display(Name = "试用期薪资"),MaxLength(10)]
+        public string TestSalary { get; set; }
         //[Display(Name = "转正薪资")]
         //public int Salary { get; set; }
         [Display(Name="入职日期")]
@@ -119,12 +119,19 @@ namespace iData.rs
         [Display(Name = "级别"), MaxLength(10)]
         //(初级、中级、高级)
         public string jb { get; set; }
+        [Display(Name = "薪资类别"), MaxLength(20)]
+        //(初级、中级、高级)
+        public string xzlb { get; set; }
         [Display(Name = "工作地点")]
         public string gzdd { get; set; }
         [Display(Name="大类工资汇总")]
         public string dlgzhz { get; set; }
-        //[Display(Name = "转正薪资")]
-        //public float zzhxzn { get; set; }
+        [Display(Name = "转正日期")]
+        public DateTime zzrq { get; set; }
+        [Display(Name = "转正薪资"),MaxLength(10)]
+        public string zzhxzn { get; set; }
+        [Display(Name = "当前薪资"),MaxLength(10)]
+        public string CurMoney { get; set; }
         [Display(Name = "合同开始")]
         public DateTime htqs { get; set; }
         [Display(Name = "合同结束")]
