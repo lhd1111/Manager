@@ -101,6 +101,12 @@
     <Compile Remove="Migrations\MyDb\20210816074115_修正考勤归档数据类型.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20210816094424_修正考勤归档数据类型.cs" />
     <Compile Remove="Migrations\MyDb\20210816094424_修正考勤归档数据类型.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20211018023358_软件著作及住宿.cs" />
+    <Compile Remove="Migrations\MyDb\20211018023358_软件著作及住宿.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20211026030249_合同上传.cs" />
+    <Compile Remove="Migrations\MyDb\20211026030249_合同上传.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20211110005804_公车汇总.cs" />
+    <Compile Remove="Migrations\MyDb\20211110005804_公车汇总.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

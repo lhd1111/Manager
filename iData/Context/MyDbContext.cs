@@ -50,6 +50,8 @@ namespace iData.Context
                 .HasOne(pt => pt.Role)
                 .WithMany(t => t.Accounts)
                 .HasForeignKey(pt => pt.RoleId);
+
+            modelBuilder.Entity<Token>().HasNoKey();
         }
         //人事
         public DbSet<Rd_Pool> rd_Pools { get; set; }
@@ -91,6 +93,14 @@ namespace iData.Context
         public DbSet<LivingCost> LivingCost { get; set; }
         [Display(Name = "国家税务")]
         public DbSet<PersonTax> PersonTaxes { get; set; }
+        [Display(Name = "租赁合同")]
+        public DbSet<AccommodationContract> AccommodationContracts { get; set; }
+        [Display(Name = "入住明细")]
+        public DbSet<Accommodation> Accommodations { get; set; }
+        [Display(Name = "软件著作")]
+        public DbSet<SoftCopyright> SoftCopyrights { get; set; }
+        [Display(Name = "班车统计")]
+        public DbSet<BusSummary> BusSummaries { get; set; }
 
         //技术中心
         public DbSet<bom> Boms { get; set; }
@@ -103,6 +113,9 @@ namespace iData.Context
         public DbSet<Menu> Menus { get; set; }
         public DbSet<UpLoadFile> UpLoadFiles { get; set; }
         public DbSet<Canlendar> Canlendars { get; set; }
+        [Display(Name = "统一上传")]
+        public DbSet<ContractUpLoadFile> ContractUpLoadFiles { get; set; }
+        public DbSet<Token> Tokens { get; set; }
 
         //采购
         public DbSet<Supplier> Suppliers { get; set; }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211110054407_统计修改")]
+    partial class 统计修改
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1219,6 +1221,9 @@ namespace Web.Migrations.MyDb
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsDel")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
 
@@ -1226,16 +1231,15 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("SusheId")
                         .HasColumnType("int")
                         .HasMaxLength(50);
-
-                    b.Property<string>("gh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
 
                     b.HasKey("Id");
 
@@ -1262,9 +1266,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("DataBaseId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DepartmentId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
@@ -1283,9 +1284,6 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(20);
 
                     b.Property<string>("Money")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PayMethod")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("SignDate")
@@ -1983,10 +1981,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("SuSheId")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
 
                     b.Property<string>("SuSheName")
                         .HasColumnType("nvarchar(20)")

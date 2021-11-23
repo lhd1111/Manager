@@ -17,6 +17,8 @@ namespace iData.rs
         public decimal rcCq { get; set; }
         [Display(Name = "日常小时"), Column(TypeName = "decimal(8, 2)")]
         public decimal F_37 { get; set; }
+        [Display(Name = "日常小时-旷工*8*3"), Column(TypeName = "decimal(8, 2)")]
+        public decimal rcxs { get; set; }
         [Column(TypeName = "decimal(8, 2)")]
         public decimal zjCq { get; set; }
         [Display(Name = "出勤天数"),Column(TypeName = "decimal(8, 2)")]
@@ -114,10 +116,14 @@ namespace iData.rs
         public decimal oaJl { get; set; }
         [Display(Name = "oa处罚"), Column(TypeName = "decimal(8, 2)")]
         public decimal oaCf { get; set; }
+        [Display(Name = "餐费"), Column(TypeName = "decimal(8, 2)")]
+        public decimal eatPay { get; set; }
         [Display(Name = "调休"), Column(TypeName = "decimal(8, 2)")]
         public decimal Tx { get; set; }
         [Display(Name = "年假"), Column(TypeName = "decimal(8, 2)")]
         public decimal Nj { get; set; }
+        [Display(Name = "签名图像")]
+        public string UserCanvas { get; set; }
         [Display(Name = "签名"),MaxLength(20)]
         public string UserName { get; set; }
 

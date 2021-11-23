@@ -21,5 +21,7 @@ namespace iData.System
         public int TypeId { get; set; }
         [Display(Name ="是否有效")]
         public bool IsValid { get; set; } = false;
+        [Display(Name = "备注")]
+        public string Note { get; set; }
     }
 }

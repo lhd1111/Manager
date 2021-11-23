@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211026064607_上传新增备注")]
+    partial class 上传新增备注
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -218,23 +220,6 @@ namespace Web.Migrations.MyDb
                     b.HasKey("Id");
 
                     b.ToTable("Role");
-                });
-
-            modelBuilder.Entity("iData.System.Token", b =>
-                {
-                    b.Property<DateTime>("Invaild")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("SoftType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Ticket")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TokenType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("Token");
                 });
 
             modelBuilder.Entity("iData.System.TwoEnum", b =>
@@ -1219,6 +1204,9 @@ namespace Web.Migrations.MyDb
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsDel")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
 
@@ -1226,16 +1214,15 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("SusheId")
                         .HasColumnType("int")
                         .HasMaxLength(50);
-
-                    b.Property<string>("gh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
 
                     b.HasKey("Id");
 
@@ -1262,9 +1249,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("DataBaseId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DepartmentId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
@@ -1283,9 +1267,6 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(20);
 
                     b.Property<string>("Money")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PayMethod")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("SignDate")
@@ -1353,42 +1334,6 @@ namespace Web.Migrations.MyDb
                     b.HasKey("Id");
 
                     b.ToTable("Attendance");
-                });
-
-            modelBuilder.Entity("iData.rs.BusSummary", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("TableId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TableName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("gh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BusSummary");
                 });
 
             modelBuilder.Entity("iData.rs.CalendarKq", b =>
@@ -1953,8 +1898,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(3)")
                         .HasMaxLength(3);
 
-                    b.Property<decimal>("DianFei")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("DianFei")
+                        .HasColumnType("real");
 
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
@@ -1969,38 +1914,34 @@ namespace Web.Migrations.MyDb
                     b.Property<DateTime>("Period")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("QiFei")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("QiFei")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("QiTaFei")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("QiTaFei")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("QingJieFei")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("QingJieFei")
+                        .HasColumnType("real");
 
-                    b.Property<decimal>("ShuiFei")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("ShuiFei")
+                        .HasColumnType("real");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("SuSheId")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
 
                     b.Property<string>("SuSheName")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<decimal>("ZhuSu")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("ZhuSu")
+                        .HasColumnType("real");
 
                     b.Property<string>("gh")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<decimal>("zj")
-                        .HasColumnType("decimal(8, 2)");
+                    b.Property<float>("zj")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 

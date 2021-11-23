@@ -16,25 +16,27 @@ namespace iData.rs
         public string DataBaseId { get; set; }
         [Display(Name = "宿舍名"),MaxLength(20)]
         public string SuSheName { get; set; }
+        [Display(Name = "宿舍Id"), MaxLength(20)]
+        public string SuSheId { get; set; }
         [Display(Name = "班制"), MaxLength(10)]
         public string BanZhi { get; set; }
         [Display(Name = "开始日期")]
         public DateTime StartDate { get; set; }
         [Display(Name = "搬出日期")]
         public DateTime? EndDate { get; set; }
-        [Display(Name = "住宿费")]
-        public float ZhuSu { get; set; }
-        [Display(Name = "水费")]
-        public float ShuiFei { get; set; }
-        [Display(Name = "电费")]
-        public float DianFei { get; set; }
-        [Display(Name = "气费")]
-        public float QiFei { get; set; }
-        [Display(Name = "清洁费")]
-        public float QingJieFei { get; set; }
-        [Display(Name = "其他费")]
-        public float QiTaFei { get; set; }
-        [Display(Name = "总费用")]
-        public float zj { get; set; }
+        [Display(Name = "住宿费"), Column(TypeName = "decimal(8, 2)")]
+        public decimal ZhuSu { get; set; }
+        [Display(Name = "水费"), Column(TypeName = "decimal(8, 2)")]
+        public decimal ShuiFei { get; set; }
+        [Display(Name = "电费"), Column(TypeName = "decimal(8, 2)")]
+        public decimal DianFei { get; set; }
+        [Display(Name = "气费"), Column(TypeName = "decimal(8, 2)")]
+        public decimal QiFei { get; set; }
+        [Display(Name = "清洁费"), Column(TypeName = "decimal(8, 2)")]
+        public decimal QingJieFei { get; set; }
+        [Display(Name = "其他费"), Column(TypeName = "decimal(8, 2)")]
+        public decimal QiTaFei { get; set; }
+        [Display(Name = "总费用"), Column(TypeName = "decimal(8, 2)")]
+        public decimal zj { get; set; }
     }
 }
