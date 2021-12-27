@@ -107,6 +107,10 @@
     <Compile Remove="Migrations\MyDb\20211026030249_合同上传.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20211110005804_公车汇总.cs" />
     <Compile Remove="Migrations\MyDb\20211110005804_公车汇总.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20211210082133_身份证修改.cs" />
+    <Compile Remove="Migrations\MyDb\20211210082133_身份证修改.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20211215024844_岗位评分.cs" />
+    <Compile Remove="Migrations\MyDb\20211215024844_岗位评分.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
