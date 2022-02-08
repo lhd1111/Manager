@@ -11,6 +11,7 @@ namespace iData.rs
     {
         [Key]
         public int Id { get; set; }
+        [Display(Name ="简答时为答案")]
         public string Name { get; set; }
         public bool IsTrue { get; set; }
         public int TestModelId { get; set; }

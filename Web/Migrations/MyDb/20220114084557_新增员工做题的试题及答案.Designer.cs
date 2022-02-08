@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220114084557_新增员工做题的试题及答案")]
+    partial class 新增员工做题的试题及答案
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2302,8 +2304,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AnswerId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("AnswerId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
@@ -2529,13 +2531,7 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("PaperId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PaperSocre")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Socre")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("SocreRate")
                         .HasColumnType("decimal(8, 2)");
 
                     b.Property<string>("gh")
@@ -3148,9 +3144,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PaperSocre")
-                        .HasColumnType("int");
 
                     b.Property<string>("Type")
                         .HasColumnType("nvarchar(max)");

@@ -101,10 +101,16 @@ namespace iData.Context
         public DbSet<SoftCopyright> SoftCopyrights { get; set; }
         [Display(Name = "班车统计")]
         public DbSet<BusSummary> BusSummaries { get; set; }
-        public DbSet<PostModel> PostModels { get; set; }
-        public DbSet<PostQuestion> PostQuestions { get; set; }
+        //2021-12-27日以后，跟考试系统合并
+        //public DbSet<PostModel> PostModels { get; set; }
+        //public DbSet<PostQuestion> PostQuestions { get; set; }
         public DbSet<PostResult> PostResults { get; set; }
         public DbSet<TestModel> TestModels { get; set; }
+        public DbSet<TestAnswer> TestAnswers { get; set; }
+        public DbSet<TestPaper> TestPapers { get; set; }
+        public DbSet<TestQuestion> TestQuestions { get; set; }
+        public DbSet<PersonAnswer> PersonAnswers { get; set; }
+        public DbSet<PersonTest> PersonTests { get; set; }
 
         //技术中心
         public DbSet<bom> Boms { get; set; }
