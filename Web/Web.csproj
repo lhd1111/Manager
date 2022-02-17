@@ -111,6 +111,8 @@
     <Compile Remove="Migrations\MyDb\20211210082133_身份证修改.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20211215024844_岗位评分.cs" />
     <Compile Remove="Migrations\MyDb\20211215024844_岗位评分.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20220212014306_薪资吻合度.cs" />
+    <Compile Remove="Migrations\MyDb\20220212014306_薪资吻合度.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

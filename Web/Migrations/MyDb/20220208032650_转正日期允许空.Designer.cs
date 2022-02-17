@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220208032650_转正日期允许空")]
+    partial class 转正日期允许空
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2890,64 +2892,6 @@ namespace Web.Migrations.MyDb
                     b.HasIndex("PersonId");
 
                     b.ToTable("SalaryExp");
-                });
-
-            modelBuilder.Entity("iData.rs.SalarySummary", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AttendanceCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AttendanceError")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DepartmentName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime>("Period")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("SalaryCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SalaryError")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SalaryName")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<decimal>("SalarySum")
-                        .HasColumnType("decimal(10, 2)");
-
-                    b.Property<string>("SalaryType")
-                        .HasColumnType("nvarchar(3)")
-                        .HasMaxLength(3);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SalarySummary");
                 });
 
             modelBuilder.Entity("iData.rs.SoftCopyright", b =>

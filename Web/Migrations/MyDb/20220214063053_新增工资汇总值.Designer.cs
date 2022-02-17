@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220214063053_新增工资汇总值")]
+    partial class 新增工资汇总值
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2899,12 +2901,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AttendanceCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AttendanceError")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
@@ -2939,7 +2935,7 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(10);
 
                     b.Property<decimal>("SalarySum")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(8, 2)");
 
                     b.Property<string>("SalaryType")
                         .HasColumnType("nvarchar(3)")

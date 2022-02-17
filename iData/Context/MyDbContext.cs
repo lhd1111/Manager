@@ -111,6 +111,8 @@ namespace iData.Context
         public DbSet<TestQuestion> TestQuestions { get; set; }
         public DbSet<PersonAnswer> PersonAnswers { get; set; }
         public DbSet<PersonTest> PersonTests { get; set; }
+        [Display(Name = "薪资吻合度")]
+        public DbSet<SalarySummary> SalarySummaries { get; set; }
 
         //技术中心
         public DbSet<bom> Boms { get; set; }

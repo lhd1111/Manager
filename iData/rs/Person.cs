@@ -135,7 +135,7 @@ namespace iData.rs
         [Display(Name="大类工资汇总")]
         public string dlgzhz { get; set; }
         [Display(Name = "转正日期")]
-        public DateTime zzrq { get; set; }
+        public DateTime? zzrq { get; set; }
         [Display(Name = "转正薪资"),MaxLength(10)]
         public string zzhxzn { get; set; }
         [Display(Name = "当前薪资"),MaxLength(10)]
