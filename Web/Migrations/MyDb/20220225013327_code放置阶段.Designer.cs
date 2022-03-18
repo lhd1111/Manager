@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220225013327_code放置阶段")]
+    partial class code放置阶段
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -174,8 +176,8 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(100);
 
                     b.Property<string>("Scope")
-                        .HasColumnType("nvarchar(max)")
-                        .HasMaxLength(2147483647);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<int>("iOrder")
                         .HasColumnType("int");
@@ -272,8 +274,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int");
 
                     b.Property<string>("Scope")
-                        .HasColumnType("nvarchar(max)")
-                        .HasMaxLength(2147483647);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
@@ -3528,10 +3530,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("Reason")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
                     b.Property<int>("Ver")
                         .HasColumnType("int");
 
@@ -3580,9 +3578,6 @@ namespace Web.Migrations.MyDb
                     b.Property<bool>("IsLeaf")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsNa")
-                        .HasColumnType("bit");
-
                     b.Property<int>("Level")
                         .HasColumnType("int");
 
@@ -3614,8 +3609,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int");
 
                     b.Property<string>("Scope")
-                        .HasColumnType("nvarchar(max)")
-                        .HasMaxLength(2147483647);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<bool>("canWrite")
                         .HasColumnType("bit");
@@ -3655,12 +3650,12 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("responsibility")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
 
                     b.Property<string>("stage")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
 
                     b.Property<bool>("startIsMilestone")
                         .HasColumnType("bit");
@@ -3668,6 +3663,9 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("status")
                         .HasColumnType("nvarchar(13)")
                         .HasMaxLength(13);
+
+                    b.Property<string>("taskName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("type")
                         .HasColumnType("nvarchar(max)");

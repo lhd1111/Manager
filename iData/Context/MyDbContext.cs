@@ -154,5 +154,11 @@ namespace iData.Context
         public DbSet<WeChatUser> WeChatUsers { get; set; }
         public DbSet<TravelReport> TravelReport { get; set; }
 
+        //项目管理部
+        public DbSet<ProjectList> ProjectLists { get; set; }
+        public DbSet<ProjectTask> ProjectTasks { get; set; }
+        
+
+
     }
 }

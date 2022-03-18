@@ -17,7 +17,7 @@ namespace iData
         public string ModifyUser { get; set; }
         [MaxLength(100)]
         public string Name { get; set; }
-        [MaxLength(100)]
+        [MaxLength(int.MaxValue)]
         public string Scope { get; set; }
         public int Level { get; set; }
         public bool IsLeaf { get; set; }

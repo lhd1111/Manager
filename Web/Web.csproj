@@ -113,6 +113,10 @@
     <Compile Remove="Migrations\MyDb\20211215024844_岗位评分.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20220212014306_薪资吻合度.cs" />
     <Compile Remove="Migrations\MyDb\20220212014306_薪资吻合度.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20220218091419_项目列表.cs" />
+    <Compile Remove="Migrations\MyDb\20220218091419_项目列表.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20220223070509_新增任务列表.cs" />
+    <Compile Remove="Migrations\MyDb\20220223070509_新增任务列表.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

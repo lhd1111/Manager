@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220218091708_项目列表")]
+    partial class 项目列表
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -174,8 +176,8 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(100);
 
                     b.Property<string>("Scope")
-                        .HasColumnType("nvarchar(max)")
-                        .HasMaxLength(2147483647);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<int>("iOrder")
                         .HasColumnType("int");
@@ -272,8 +274,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int");
 
                     b.Property<string>("Scope")
-                        .HasColumnType("nvarchar(max)")
-                        .HasMaxLength(2147483647);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
@@ -2257,10 +2259,6 @@ namespace Web.Migrations.MyDb
                     b.Property<DateTime>("rzrq")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("sReturn")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
                     b.Property<string>("xzdj")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
@@ -3468,10 +3466,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("CloseStatus")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
                     b.Property<string>("Code")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -3499,10 +3493,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("datetime2")
                         .HasMaxLength(50);
 
-                    b.Property<bool>("IsClose")
-                        .HasColumnType("bit")
-                        .HasMaxLength(10);
-
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
 
@@ -3528,10 +3518,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("Reason")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
                     b.Property<int>("Ver")
                         .HasColumnType("int");
 
@@ -3548,138 +3534,15 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<int>("tasks")
+                        .HasColumnType("int");
+
                     b.Property<string>("zoom")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("ProjectList");
-                });
-
-            modelBuilder.Entity("iData.tech.ProjectTask", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("ActualEndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ActualStartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<bool>("IsLeaf")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsNa")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<int?>("ParentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PersonName")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime>("PlanEndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("PlanStartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ProjectId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Scope")
-                        .HasColumnType("nvarchar(max)")
-                        .HasMaxLength(2147483647);
-
-                    b.Property<bool>("canWrite")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("collapsed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("depends")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("duration")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("endIsMilestone")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("gh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<bool>("hasChild")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("iOrder")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("progress")
-                        .HasColumnType("decimal(5,2)");
-
-                    b.Property<string>("progressByWorklog")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("relevance")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("responsibility")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("stage")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<bool>("startIsMilestone")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("status")
-                        .HasColumnType("nvarchar(13)")
-                        .HasMaxLength(13);
-
-                    b.Property<string>("type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("typeId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ParentId");
-
-                    b.ToTable("ProjectTask");
                 });
 
             modelBuilder.Entity("iData.tech.bom", b =>
@@ -3946,13 +3809,6 @@ namespace Web.Migrations.MyDb
                     b.HasOne("iData.rs.Person", "Person")
                         .WithMany("WorkExps")
                         .HasForeignKey("PersonId");
-                });
-
-            modelBuilder.Entity("iData.tech.ProjectTask", b =>
-                {
-                    b.HasOne("iData.tech.ProjectTask", "Parent")
-                        .WithMany("Children")
-                        .HasForeignKey("ParentId");
                 });
 
             modelBuilder.Entity("iData.tech.bom", b =>

@@ -60,6 +60,9 @@ namespace iData.rs
         public string Relatives { get; set; }
         [Display(Name = "亲属与本人关系"), MaxLength(20)]
         public string cRelation { get; set; }
+        [Display(Name = "亲属与本人关系"), MaxLength(20)]
+        public string sReturn { get; set; }
+
         [Display(Name ="紧急联系人电话"), MaxLength(20)]
         public string ContactTel { get; set; }
         [Display(Name ="学历")]
