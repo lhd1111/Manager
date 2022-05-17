@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220415035524_新增确认类表1")]
+    partial class 新增确认类表1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1696,10 +1698,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
                     b.HasKey("Id");
 
                     b.ToTable("ExternalCheck");
@@ -1773,6 +1771,9 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("AssetNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("BuyDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("CheckDate")
                         .HasColumnType("datetime2");
 
@@ -1783,11 +1784,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<int?>("InvailId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IsPan")
-                        .HasColumnType("int");
+                    b.Property<DateTime?>("Invaildate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
@@ -2229,12 +2227,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<string>("CardBack")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CardFront")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CardNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -2355,9 +2347,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("OaRzId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Photo")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PostId")
                         .HasColumnType("int");

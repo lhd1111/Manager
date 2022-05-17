@@ -17,6 +17,9 @@ namespace iData.rs
         public string Project { get; set; }
         [Display(Name = "单位信息"), MaxLength(50)]
         public string DepartmentId { get; set; }
+        [Display(Name = "外审类型"), MaxLength(50)]
+        public string Type { get; set; }
+
         [Display(Name = "是否关闭"), MaxLength(1)]
         public string IsClosed { get; set; }
     }

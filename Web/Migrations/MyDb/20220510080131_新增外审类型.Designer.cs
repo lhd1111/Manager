@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220510080131_新增外审类型")]
+    partial class 新增外审类型
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2229,12 +2231,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<string>("CardBack")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CardFront")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CardNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -2355,9 +2351,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("OaRzId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Photo")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PostId")
                         .HasColumnType("int");

@@ -117,6 +117,8 @@
     <Compile Remove="Migrations\MyDb\20220218091419_项目列表.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20220223070509_新增任务列表.cs" />
     <Compile Remove="Migrations\MyDb\20220223070509_新增任务列表.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20220318090139_新增固定资产表.cs" />
+    <Compile Remove="Migrations\MyDb\20220318090139_新增固定资产表.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

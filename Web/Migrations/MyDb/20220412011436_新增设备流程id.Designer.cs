@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220412011436_新增设备流程id")]
+    partial class 新增设备流程id
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -116,53 +118,6 @@ namespace Web.Migrations.MyDb
                     b.HasIndex("RoleId");
 
                     b.ToTable("AccountRole");
-                });
-
-            modelBuilder.Entity("iData.System.ApproveRequest", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ApproveGh")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ApproveName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ApproveStatus")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ApproveTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ApproveRequest");
                 });
 
             modelBuilder.Entity("iData.System.Canlendar", b =>
@@ -1696,10 +1651,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
                     b.HasKey("Id");
 
                     b.ToTable("ExternalCheck");
@@ -1773,6 +1724,9 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("AssetNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("BuyDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("CheckDate")
                         .HasColumnType("datetime2");
 
@@ -1783,11 +1737,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<int?>("InvailId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IsPan")
-                        .HasColumnType("int");
+                    b.Property<DateTime?>("Invaildate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
@@ -2229,12 +2180,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<string>("CardBack")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CardFront")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CardNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -2355,9 +2300,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("OaRzId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Photo")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PostId")
                         .HasColumnType("int");

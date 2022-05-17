@@ -113,6 +113,13 @@ namespace iData.Context
         public DbSet<PersonTest> PersonTests { get; set; }
         [Display(Name = "薪资吻合度")]
         public DbSet<SalarySummary> SalarySummaries { get; set; }
+        //固定资产管理
+        [Display(Name = "固定资产")]
+        public DbSet<FixedAsset> FixedAssets { get; set; }
+        [Display(Name = "固定资产明细")]
+        public DbSet<FixedAssetDetail> FixedAssetDetails { get; set; }
+        [Display(Name = "固定资产领用明细表")]
+        public DbSet<FixedAssetApply> FixedAssetApplies { get; set; }
 
         //技术中心
         public DbSet<bom> Boms { get; set; }
@@ -127,6 +134,7 @@ namespace iData.Context
         public DbSet<Canlendar> Canlendars { get; set; }
         [Display(Name = "统一上传")]
         public DbSet<ContractUpLoadFile> ContractUpLoadFiles { get; set; }
+        public DbSet<ApproveRequest> ApproveRequests { get; set; }
         public DbSet<Token> Tokens { get; set; }
 
         //采购

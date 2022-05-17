@@ -168,6 +168,12 @@ namespace iData.rs
         public string BankName { get; set; }
         [Display(Name = "银行卡号"), MaxLength(19)]
         public string BankCardNumber { get; set; }
+        [Display(Name = "头像")]
+        public string Photo { get; set; }
+        [Display(Name = "卡正面")]
+        public string CardFront { get; set; }
+        [Display(Name = "卡背面")]
+        public string CardBack { get; set; }
         public virtual ICollection<EducationExp> EducationExps { get; set; } = new List<EducationExp>();
         public virtual ICollection<TrainExp> TrainExps { get; set; } = new List<TrainExp>();
         public virtual ICollection<WorkExp> WorkExps { get; set; } = new List<WorkExp>();
