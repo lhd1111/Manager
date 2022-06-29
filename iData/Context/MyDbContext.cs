@@ -152,6 +152,8 @@ namespace iData.Context
         public DbSet<SalesFreight> SalesFreights { get; set; }
         public DbSet<FreightSplit> FreightSplits { get; set; }
         public DbSet<CompanyBank> CompanyBanks { get; set; }
+        //研发成本
+        public DbSet<Expenditure> Expenditures { get; set; }
 
 
         //模具
