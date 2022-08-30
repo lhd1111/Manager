@@ -167,8 +167,19 @@ namespace iData.Context
         //项目管理部
         public DbSet<ProjectList> ProjectLists { get; set; }
         public DbSet<ProjectTask> ProjectTasks { get; set; }
-        
+        public DbSet<ProjectProblem> ProjectProblems { get; set; }
 
+        //工艺部
+        //机器列表
+        public DbSet<Machine> Machines { get; set; }
+        //模具-项目列表
+        public DbSet<ModelList> ModelLists { get; set; }
+        //模具巡检明细
+        public DbSet<ModelDetail> ModelDetails { get; set; }
+        //模具巡检明细记录
+        public DbSet<CheckDetail> CheckDetails { get; set; }
+        //标准更替表
+        public DbSet<StandardHistory> StandardHistories { get; set; }
 
     }
 }

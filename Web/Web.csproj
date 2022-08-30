@@ -119,6 +119,14 @@
     <Compile Remove="Migrations\MyDb\20220223070509_新增任务列表.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20220318090139_新增固定资产表.cs" />
     <Compile Remove="Migrations\MyDb\20220318090139_新增固定资产表.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20220712094310_修改机台号名称.cs" />
+    <Compile Remove="Migrations\MyDb\20220712094310_修改机台号名称.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20220712094505_修正机台命名.cs" />
+    <Compile Remove="Migrations\MyDb\20220712094505_修正机台命名.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20220713085219_新增模具巡检测试表.cs" />
+    <Compile Remove="Migrations\MyDb\20220713085219_新增模具巡检测试表.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20220830024942_项目周期.cs" />
+    <Compile Remove="Migrations\MyDb\20220830024942_项目周期.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220805033236_项目问题")]
+    partial class 项目问题
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4015,16 +4017,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CarType")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<DateTime?>("CloseDate")
+                    b.Property<DateTime>("CloseDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Code")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
@@ -4060,12 +4054,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<DateTime?>("PlanDate")
+                    b.Property<DateTime>("PlanDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("ProjectName")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
 
                     b.Property<string>("Scope")
                         .HasColumnType("nvarchar(max)")
@@ -4075,16 +4065,9 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(5)")
                         .HasMaxLength(5);
 
-                    b.Property<string>("SubmitGh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
                     b.Property<string>("gh")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
-
-                    b.Property<int>("requestid")
-                        .HasColumnType("int");
 
                     b.Property<string>("responsibility")
                         .HasColumnType("nvarchar(20)")

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220706085505_机台")]
+    partial class 机台
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3664,88 +3666,6 @@ namespace Web.Migrations.MyDb
                     b.ToTable("WorkExp");
                 });
 
-            modelBuilder.Entity("iData.tech.CheckDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<bool>("IsLeaf")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ModelDetailId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<int?>("ParentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Path")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Scope")
-                        .HasColumnType("nvarchar(max)")
-                        .HasMaxLength(2147483647);
-
-                    b.Property<string>("Value1")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Value2")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Value3")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Value4")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Value5")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Value6")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Value7")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<int>("iOrder")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ParentId");
-
-                    b.ToTable("CheckDetail");
-                });
-
             modelBuilder.Entity("iData.tech.Machine", b =>
                 {
                     b.Property<int>("Id")
@@ -3783,92 +3703,6 @@ namespace Web.Migrations.MyDb
                     b.HasKey("Id");
 
                     b.ToTable("Machine");
-                });
-
-            modelBuilder.Entity("iData.tech.ModelDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<bool>("IsRef")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("MachineNum")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ModelId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Version")
-                        .HasColumnType("int");
-
-                    b.Property<int>("rModelDetailId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ModelDetail");
-                });
-
-            modelBuilder.Entity("iData.tech.ModelList", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Code")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("ModelName")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("ModelNum")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("ModelType")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ModelList");
                 });
 
             modelBuilder.Entity("iData.tech.Project", b =>
@@ -4008,95 +3842,6 @@ namespace Web.Migrations.MyDb
                     b.ToTable("ProjectList");
                 });
 
-            modelBuilder.Entity("iData.tech.ProjectProblem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CarType")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<DateTime?>("CloseDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Code")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsLeaf")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<int?>("ParentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PersonName")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("PlanDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ProjectName")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Scope")
-                        .HasColumnType("nvarchar(max)")
-                        .HasMaxLength(2147483647);
-
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(5)")
-                        .HasMaxLength(5);
-
-                    b.Property<string>("SubmitGh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("gh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<int>("requestid")
-                        .HasColumnType("int");
-
-                    b.Property<string>("responsibility")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ParentId");
-
-                    b.ToTable("ProjectProblem");
-                });
-
             modelBuilder.Entity("iData.tech.ProjectTask", b =>
                 {
                     b.Property<int>("Id")
@@ -4220,38 +3965,6 @@ namespace Web.Migrations.MyDb
                     b.HasIndex("ParentId");
 
                     b.ToTable("ProjectTask");
-                });
-
-            modelBuilder.Entity("iData.tech.StandardHistory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("ModelDetailId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("StandardHistory");
                 });
 
             modelBuilder.Entity("iData.tech.bom", b =>
@@ -4518,20 +4231,6 @@ namespace Web.Migrations.MyDb
                     b.HasOne("iData.rs.Person", "Person")
                         .WithMany("WorkExps")
                         .HasForeignKey("PersonId");
-                });
-
-            modelBuilder.Entity("iData.tech.CheckDetail", b =>
-                {
-                    b.HasOne("iData.tech.CheckDetail", "Parent")
-                        .WithMany("Children")
-                        .HasForeignKey("ParentId");
-                });
-
-            modelBuilder.Entity("iData.tech.ProjectProblem", b =>
-                {
-                    b.HasOne("iData.tech.ProjectProblem", "Parent")
-                        .WithMany("Children")
-                        .HasForeignKey("ParentId");
                 });
 
             modelBuilder.Entity("iData.tech.ProjectTask", b =>

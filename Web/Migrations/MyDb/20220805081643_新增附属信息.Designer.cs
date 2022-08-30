@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220805081643_新增附属信息")]
+    partial class 新增附属信息
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4019,7 +4021,7 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<DateTime?>("CloseDate")
+                    b.Property<DateTime>("CloseDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Code")
@@ -4060,7 +4062,7 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<DateTime?>("PlanDate")
+                    b.Property<DateTime>("PlanDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ProjectName")
@@ -4078,6 +4080,10 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("SubmitGh")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
+
+                    b.Property<string>("Submitter")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
                     b.Property<string>("gh")
                         .HasColumnType("nvarchar(10)")
