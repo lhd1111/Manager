@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221011081543_检测报告明细")]
+    partial class 检测报告明细
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1692,9 +1694,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("img")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Covid_19Detail");
@@ -2637,14 +2636,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<DateTime>("htqs")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool>("isFg")
-                        .HasColumnType("bit")
-                        .HasMaxLength(20);
-
-                    b.Property<bool>("isQs")
-                        .HasColumnType("bit")
-                        .HasMaxLength(20);
 
                     b.Property<string>("jb")
                         .HasColumnType("nvarchar(10)")
@@ -3808,8 +3799,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int");
 
                     b.Property<string>("PostStr")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
                     b.Property<string>("Reason")
                         .HasColumnType("nvarchar(max)");

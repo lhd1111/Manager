@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221025083842_新增返岗")]
+    partial class 新增返岗
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2638,11 +2640,11 @@ namespace Web.Migrations.MyDb
                     b.Property<DateTime>("htqs")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("isFg")
+                    b.Property<bool>("isQsFg")
                         .HasColumnType("bit")
                         .HasMaxLength(20);
 
-                    b.Property<bool>("isQs")
+                    b.Property<bool>("isQsSpan")
                         .HasColumnType("bit")
                         .HasMaxLength(20);
 

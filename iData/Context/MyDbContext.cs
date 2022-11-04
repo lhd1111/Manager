@@ -2,6 +2,7 @@
 using iData.cw;
 using iData.mj;
 using iData.Mobile;
+using iData.Quality;
 using iData.rs;
 using iData.System;
 using iData.tech;
@@ -89,6 +90,10 @@ namespace iData.Context
         public DbSet<SalaryAttendance> SalaryAttendances { get; set; }
         [Display(Name = "新冠调查")]
         public DbSet<Covid_19> Covid_19s { get; set; }
+        [Display(Name = "新冠反馈")]
+        public DbSet<Covid_19Report> Covid_19Reports { get; set; }
+        [Display(Name = "新冠反馈明细")]
+        public DbSet<Covid_19Detail> Covid_19Details { get; set; }
         [Display(Name = "水电气")]
         public DbSet<LivingCost> LivingCost { get; set; }
         [Display(Name = "国家税务")]
@@ -168,6 +173,7 @@ namespace iData.Context
         public DbSet<ProjectList> ProjectLists { get; set; }
         public DbSet<ProjectTask> ProjectTasks { get; set; }
         public DbSet<ProjectProblem> ProjectProblems { get; set; }
+        public DbSet<ProjectMould> ProjectMoulds { get; set; }
 
         //工艺部
         //机器列表
@@ -180,6 +186,8 @@ namespace iData.Context
         public DbSet<CheckDetail> CheckDetails { get; set; }
         //标准更替表
         public DbSet<StandardHistory> StandardHistories { get; set; }
+        //品质本部
+        public DbSet<Experience> Experiences { get; set; }
 
     }
 }

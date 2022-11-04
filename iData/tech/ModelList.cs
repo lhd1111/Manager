@@ -12,7 +12,7 @@ namespace iData.tech
         [Display(Name = "模具编号"), MaxLength(20)]
         public string ModelNum { get; set; }
 
-        [Display(Name ="模具名称"),MaxLength(50)]
+        [Display(Name ="模具名称")]
         public string ModelName { get; set; }
         [Display(Name = "模具类型"), MaxLength(50)]
         public string ModelType { get; set; }

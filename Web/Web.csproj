@@ -127,6 +127,8 @@
     <Compile Remove="Migrations\MyDb\20220713085219_新增模具巡检测试表.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20220830024942_项目周期.cs" />
     <Compile Remove="Migrations\MyDb\20220830024942_项目周期.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20220908065702_修改选择菜单.cs" />
+    <Compile Remove="Migrations\MyDb\20220908065702_修改选择菜单.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

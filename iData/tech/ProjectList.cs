@@ -47,5 +47,7 @@ namespace iData.tech
         public DateTime PlanEndDate { get; set; }
         public DateTime? ActualStartDate { get; set; }
         public DateTime? ActualEndDate { get; set; }
+        //模板期限，0为没有允许不填
+        public string? ProjectMould { get; set; }
     }
 }

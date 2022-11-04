@@ -19,7 +19,7 @@ namespace iData.rs
         public string Company { get; set; }
         [MaxLength(20)]
         public string DepartmentStr { get; set; }
-        [Display(Name = "工作岗位"), MaxLength(20)]
+        [Display(Name = "工作岗位"), MaxLength(50)]
         public string PostStr { get; set; }
         [Display(Name ="离职原因")]
         public string Reason { get; set; }

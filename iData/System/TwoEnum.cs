@@ -9,7 +9,12 @@ namespace iData.System
     [Table(nameof(TwoEnum))]
     public class TwoEnum:TreeBase<TwoEnum>
     {
-        [Display(Name ="名称"),MaxLength(20)]
-        public string Name { get; set; }
+        //顶级
+        //public string Name { get; set; }
+        [Display(Name = "英文名"), MaxLength(20)]
+        public string EName { get; set; }
+        public int iOrder { get; set; }
+        public int DepartmentId { get; set; }
+
     }
 }

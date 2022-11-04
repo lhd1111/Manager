@@ -56,11 +56,16 @@ namespace iData.rs
         public string Contact { get; set; }
         [Display(Name ="与本人关系"), MaxLength(20)]
         public string Relation { get; set; }
+        [Display(Name = "是否有亲属"), MaxLength(20)]
+        public bool isQs { get; set; }
         [Display(Name = "公司亲属"), MaxLength(20)]
         public string Relatives { get; set; }
         [Display(Name = "亲属与本人关系"), MaxLength(20)]
         public string cRelation { get; set; }
-        [Display(Name = "亲属与本人关系"), MaxLength(20)]
+        [Display(Name = "是否返岗"), MaxLength(20)]
+        public bool isFg { get; set; }
+
+        [Display(Name = "返岗原因"), MaxLength(20)]
         public string sReturn { get; set; }
 
         [Display(Name ="紧急联系人电话"), MaxLength(20)]
