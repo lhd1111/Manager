@@ -14,6 +14,7 @@ namespace iData.System
         public string Path { get; set; }
         [MaxLength(100)]
         public string Roles { get; set; }
+        public bool IsDel { get; set; }
         [ForeignKey("DepartmentId")]
         public virtual Department Department { get; set; }
         public int iOrder { get; set; }

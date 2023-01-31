@@ -129,6 +129,12 @@
     <Compile Remove="Migrations\MyDb\20220830024942_项目周期.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20220908065702_修改选择菜单.cs" />
     <Compile Remove="Migrations\MyDb\20220908065702_修改选择菜单.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20221223025528_新增是否选修.cs" />
+    <Compile Remove="Migrations\MyDb\20221223025528_新增是否选修.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20221228010014_菜单新增删除.cs" />
+    <Compile Remove="Migrations\MyDb\20221228010014_菜单新增删除.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20221228072418_付款合同.cs" />
+    <Compile Remove="Migrations\MyDb\20221228072418_付款合同.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230130092322_新增营销子任务")]
+    partial class 新增营销子任务
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3380,15 +3382,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("Bj")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Cc")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Cj")
-                        .HasColumnType("decimal(8, 2)");
-
                     b.Property<DateTime?>("ConfirmTime")
                         .HasColumnType("datetime2");
 
@@ -3401,9 +3394,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("Dxbj")
-                        .HasColumnType("decimal(8, 2)");
 
                     b.Property<decimal>("F_105")
                         .HasColumnType("decimal(8, 2)");
@@ -3450,14 +3440,8 @@ namespace Web.Migrations.MyDb
                     b.Property<decimal>("HighTemperature")
                         .HasColumnType("decimal(8, 2)");
 
-                    b.Property<decimal>("Hj")
-                        .HasColumnType("decimal(8, 2)");
-
                     b.Property<bool>("IsFull")
                         .HasColumnType("bit");
-
-                    b.Property<decimal>("Jb")
-                        .HasColumnType("decimal(8, 2)");
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
@@ -3469,16 +3453,10 @@ namespace Web.Migrations.MyDb
                     b.Property<decimal>("Nj")
                         .HasColumnType("decimal(8, 2)");
 
-                    b.Property<decimal>("Pcj")
-                        .HasColumnType("decimal(8, 2)");
-
                     b.Property<DateTime>("Period")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Piece")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Prj")
                         .HasColumnType("decimal(8, 2)");
 
                     b.Property<decimal>("Sb")
@@ -3486,15 +3464,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<float>("SbYb")
                         .HasColumnType("real");
-
-                    b.Property<decimal>("Sj")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Sx")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Tq")
-                        .HasColumnType("decimal(8, 2)");
 
                     b.Property<decimal>("Tx")
                         .HasColumnType("decimal(8, 2)");
@@ -3520,9 +3489,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("ecjj")
                         .HasColumnType("decimal(8, 2)");
-
-                    b.Property<int>("fjec")
-                        .HasColumnType("int");
 
                     b.Property<string>("gh")
                         .HasColumnType("nvarchar(20)")
@@ -3605,9 +3571,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("zjCq")
                         .HasColumnType("decimal(8, 2)");
-
-                    b.Property<int>("zjec")
-                        .HasColumnType("int");
 
                     b.Property<int>("zt")
                         .HasColumnType("int");

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace iData.rs
@@ -116,12 +117,40 @@ namespace iData.rs
         public decimal oaJl { get; set; }
         [Display(Name = "oa处罚"), Column(TypeName = "decimal(8, 2)")]
         public decimal oaCf { get; set; }
+        [Display(Name = "oa奖励次")]
+        public int zjec { get; set; }
+        [Display(Name = "oa处罚次")]
+        public int fjec { get; set; }
         [Display(Name = "餐费"), Column(TypeName = "decimal(8, 2)")]
         public decimal eatPay { get; set; }
         [Display(Name = "调休"), Column(TypeName = "decimal(8, 2)")]
         public decimal Tx { get; set; }
-        [Display(Name = "年假"), Column(TypeName = "decimal(8, 2)")]
+        [Display(Name = "年假"), Column(TypeName = "decimal(8, 2)")] 
         public decimal Nj { get; set; }
+        [Display(Name = "事假"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Sj { get; set; }
+        [Display(Name = "病假"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Bj { get; set; }
+        [Display(Name = "探亲假"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Tq { get; set; }
+        [Display(Name = "婚假"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Hj { get; set; }
+        [Display(Name = "产假"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Cj { get; set; }
+        [Display(Name = "哺乳假"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Prj { get; set; }
+        [Display(Name = "丧假"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Sx { get; set; }
+        [Display(Name = "陪产假"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Pcj { get; set; }
+        [Display(Name = "带薪病假"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Dxbj { get; set; }
+        [Display(Name = "加班"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Jb { get; set; }
+        [Display(Name = "出差"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Cc { get; set; }
+        [Display(Name = "工作总时"), Column(TypeName = "decimal(8, 2)")] 
+        public decimal workZxs { get; set; }
         [Display(Name = "签名图像")]
         public string UserCanvas { get; set; }
         [Display(Name = "签名"),MaxLength(20)]

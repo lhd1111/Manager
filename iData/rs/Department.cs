@@ -23,11 +23,15 @@ namespace iData.rs
         public int iOrder { get; set; }
         public bool IsLeaf { get; set; } = true;
         public int oDepartmentId { get; set; }
-        public int rDepartmentId { get; set; }
+        [MaxLength(10)]
+        public string rDepartmentId { get; set; }
+        [Display(Name = "考勤机的部门编号")]
+        public int kDepartmentId { get; set; }
+
         [Display(Name="邮箱id")]
         public string mDepartmentId { get; set; }
-        [Display(Name = "财务u8账号")]
-        public int uDepartmnetId { get; set; }
+        [Display(Name = "财务u8部门"), MaxLength(10)]
+        public string uDepartmnetId { get; set; }
         [Display(Name ="u8数据库编号")]
         public string uDataBase { get; set; }
         [Display(Name ="人事数据库编号")]

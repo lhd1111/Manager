@@ -53,6 +53,7 @@ namespace iData.rs
         public decimal sSy { get; set; }
         [Display(Name = "AB(28)累计其他扣除"), Column(TypeName = "decimal(8, 2)")]
         public decimal sQt { get; set; }
+        //20221226开始，新增AC累计个人养老金,29依次累加
 
         [Display(Name = "AC(29)累计准予扣除的捐赠"), Column(TypeName = "decimal(8, 2)")]
         public decimal sZykc { get; set; }

@@ -3,126 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230111014655_修正u8编号")]
+    partial class 修正u8编号
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("iData.Marketing.OaApply", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsClose")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(5)")
-                        .HasMaxLength(5);
-
-                    b.Property<int>("gh")
-                        .HasColumnType("int")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("nbbh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<int>("requestId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OaApply");
-                });
-
-            modelBuilder.Entity("iData.Marketing.PriceCollection", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OaApplyId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PersonGh")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("PersonName")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("PlanEndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("PlanStartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("TaskName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Ver")
-                        .HasColumnType("int");
-
-                    b.Property<int>("requestId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PriceCollection");
-                });
 
             modelBuilder.Entity("iData.Mobile.WeChatUser", b =>
                 {
@@ -3337,57 +3234,12 @@ namespace Web.Migrations.MyDb
                     b.ToTable("PostResult");
                 });
 
-            modelBuilder.Entity("iData.rs.Psychology", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Answer")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<int>("Score")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Psychology");
-                });
-
             modelBuilder.Entity("iData.rs.SalaryAttendance", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<decimal>("Bj")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Cc")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Cj")
-                        .HasColumnType("decimal(8, 2)");
 
                     b.Property<DateTime?>("ConfirmTime")
                         .HasColumnType("datetime2");
@@ -3401,9 +3253,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("Dxbj")
-                        .HasColumnType("decimal(8, 2)");
 
                     b.Property<decimal>("F_105")
                         .HasColumnType("decimal(8, 2)");
@@ -3450,14 +3299,8 @@ namespace Web.Migrations.MyDb
                     b.Property<decimal>("HighTemperature")
                         .HasColumnType("decimal(8, 2)");
 
-                    b.Property<decimal>("Hj")
-                        .HasColumnType("decimal(8, 2)");
-
                     b.Property<bool>("IsFull")
                         .HasColumnType("bit");
-
-                    b.Property<decimal>("Jb")
-                        .HasColumnType("decimal(8, 2)");
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
@@ -3469,16 +3312,10 @@ namespace Web.Migrations.MyDb
                     b.Property<decimal>("Nj")
                         .HasColumnType("decimal(8, 2)");
 
-                    b.Property<decimal>("Pcj")
-                        .HasColumnType("decimal(8, 2)");
-
                     b.Property<DateTime>("Period")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Piece")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Prj")
                         .HasColumnType("decimal(8, 2)");
 
                     b.Property<decimal>("Sb")
@@ -3486,15 +3323,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<float>("SbYb")
                         .HasColumnType("real");
-
-                    b.Property<decimal>("Sj")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Sx")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Tq")
-                        .HasColumnType("decimal(8, 2)");
 
                     b.Property<decimal>("Tx")
                         .HasColumnType("decimal(8, 2)");
@@ -3520,9 +3348,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("ecjj")
                         .HasColumnType("decimal(8, 2)");
-
-                    b.Property<int>("fjec")
-                        .HasColumnType("int");
 
                     b.Property<string>("gh")
                         .HasColumnType("nvarchar(20)")
@@ -3605,9 +3430,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("zjCq")
                         .HasColumnType("decimal(8, 2)");
-
-                    b.Property<int>("zjec")
-                        .HasColumnType("int");
 
                     b.Property<int>("zt")
                         .HasColumnType("int");

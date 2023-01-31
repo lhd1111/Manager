@@ -9,7 +9,10 @@ namespace iData.rs
     [Table(nameof(PersonTest))]
     public class PersonTest:Base
     {
+        [MaxLength(20)]
         public string gh { get; set; }
+        [MaxLength(5)]
+        public string IsBx { get; set; } = "必修";
         [Display(Name ="试卷信息")]
         public int PaperId { get; set; }
         [Display(Name ="得分"), Column(TypeName = "decimal(8, 2)")]

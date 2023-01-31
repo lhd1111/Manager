@@ -1,11 +1,13 @@
 ﻿using iData.cg;
 using iData.cw;
+using iData.Marketing;
 using iData.mj;
 using iData.Mobile;
 using iData.Quality;
 using iData.rs;
 using iData.System;
 using iData.tech;
+using iData.WuHu;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -53,6 +55,7 @@ namespace iData.Context
                 .HasForeignKey(pt => pt.RoleId);
 
             modelBuilder.Entity<Token>().HasNoKey();
+            
         }
         //人事
         public DbSet<Rd_Pool> rd_Pools { get; set; }
@@ -116,6 +119,8 @@ namespace iData.Context
         public DbSet<TestQuestion> TestQuestions { get; set; }
         public DbSet<PersonAnswer> PersonAnswers { get; set; }
         public DbSet<PersonTest> PersonTests { get; set; }
+        public DbSet<Psychology> Psychologies { get; set; }
+        
         [Display(Name = "薪资吻合度")]
         public DbSet<SalarySummary> SalarySummaries { get; set; }
         //固定资产管理
@@ -149,6 +154,8 @@ namespace iData.Context
         public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
         public DbSet<MaterialSplitCost> MaterialSplitCosts { get; set; }
         public DbSet<PU_AppVouch> PU_AppVouchs { get; set; }
+        public DbSet<PurchaseContract> PurchaseContracts { get; set; }
+        public DbSet<PurchaseDetail> PurchaseDetails { get; set; }
 
         //财务
         public DbSet<SalesReport> SalesReports { get; set; }
@@ -174,6 +181,8 @@ namespace iData.Context
         public DbSet<ProjectTask> ProjectTasks { get; set; }
         public DbSet<ProjectProblem> ProjectProblems { get; set; }
         public DbSet<ProjectMould> ProjectMoulds { get; set; }
+        public DbSet<ProjectPoint> ProjectPoints { get; set; }
+        
 
         //工艺部
         //机器列表
@@ -188,6 +197,14 @@ namespace iData.Context
         public DbSet<StandardHistory> StandardHistories { get; set; }
         //品质本部
         public DbSet<Experience> Experiences { get; set; }
+
+        //营销中心
+        public DbSet<OaApply> OaApply { get; set; }
+        public DbSet<PriceCollection> PriceCollections { get; set; }
+
+        //二维码管理及绑定
+        public DbSet<QRCode> QRCodes { get; set; }
+        public DbSet<QRBind> QRBinds { get; set; }
 
     }
 }
