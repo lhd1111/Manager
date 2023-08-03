@@ -13,6 +13,8 @@ namespace iData.System
         //public string Name { get; set; }
         [Display(Name = "英文名"), MaxLength(20)]
         public string EName { get; set; }
+        [Display(Name = "值"), MaxLength(20)]
+        public string Value { get; set; }
         public int iOrder { get; set; }
         public int DepartmentId { get; set; }
 

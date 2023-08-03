@@ -201,6 +201,17 @@ namespace iData.Context
         //营销中心
         public DbSet<OaApply> OaApply { get; set; }
         public DbSet<PriceCollection> PriceCollections { get; set; }
+        public DbSet<MarketBom> MarketBoms { get; set; }
+        public DbSet<WgYcl> WgYcls { get; set; }
+        public DbSet<PriceModel> PriceModels { get; set; }
+        public DbSet<PriceDept> PriceDepts { get; set; }
+        public DbSet<PricePacking> PricePackings { get; set; }
+        public DbSet<PriceMarket> PriceMarkets { get; set; }
+        public DbSet<PricePt> PricePts { get; set; }
+
+
+
+
 
         //二维码管理及绑定
         public DbSet<QRCode> QRCodes { get; set; }

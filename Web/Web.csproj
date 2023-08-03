@@ -135,6 +135,22 @@
     <Compile Remove="Migrations\MyDb\20221228010014_菜单新增删除.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20221228072418_付款合同.cs" />
     <Compile Remove="Migrations\MyDb\20221228072418_付款合同.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230203033607_撤销报价关联表id.cs" />
+    <Compile Remove="Migrations\MyDb\20230203033607_撤销报价关联表id.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230210013604_新增营销bom表.cs" />
+    <Compile Remove="Migrations\MyDb\20230210013604_新增营销bom表.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230228103420_各部门报价.cs" />
+    <Compile Remove="Migrations\MyDb\20230228103420_各部门报价.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230306084204_撤销包覆.cs" />
+    <Compile Remove="Migrations\MyDb\20230306084204_撤销包覆.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230306085320_机台费用迁移.cs" />
+    <Compile Remove="Migrations\MyDb\20230306085320_机台费用迁移.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230309033232_包装属性.cs" />
+    <Compile Remove="Migrations\MyDb\20230309033232_包装属性.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230419025458_bom新增料头.cs" />
+    <Compile Remove="Migrations\MyDb\20230419025458_bom新增料头.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230419025754_bom新增料头.cs" />
+    <Compile Remove="Migrations\MyDb\20230419025754_bom新增料头.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -37,7 +37,7 @@ namespace iData.tech
         //public int tasks { get; set; }
         [Display(Name = "缩放状态"), MaxLength(10)]
         public string zoom { get; set; }
-        [Display(Name = "描述"), MaxLength(10)]
+        [Display(Name = "描述"), MaxLength(50)]
         public string Reason { get; set; }
         [Display(Name = "关闭原因"), MaxLength(10)]
         public string CloseStatus { get; set; }

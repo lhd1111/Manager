@@ -25,6 +25,7 @@ namespace iData.tech
         public string depends { get; set; }
         [Display(Name = "折叠")]
         public bool canWrite { get; set; }
+        public bool canNa { get; set; } = true;
         public DateTime PlanStartDate { get; set; }
         public DateTime PlanEndDate { get; set; }
         public DateTime? ActualStartDate { get; set; }

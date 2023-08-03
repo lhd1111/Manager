@@ -19,6 +19,142 @@ namespace Web.Migrations.MyDb
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("iData.Marketing.MarketBom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Characteristic")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreateUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("CustomCode")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("FsCode")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("GrossWeight")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Inventory")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsLeaf")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsVirtual")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MakeMothod")
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
+
+                    b.Property<string>("Material")
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
+
+                    b.Property<int>("ModelNumber")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifyTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifyUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("ModleCavity")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<decimal>("Number")
+                        .HasColumnType("decimal(6, 2)");
+
+                    b.Property<string>("Paint")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PriceCollectionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Scope")
+                        .HasColumnType("nvarchar(max)")
+                        .HasMaxLength(2147483647);
+
+                    b.Property<string>("Specs")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Surface")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Tooling")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("U8Code")
+                        .HasColumnType("nvarchar(60)")
+                        .HasMaxLength(60);
+
+                    b.Property<string>("U8Company")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("U8Dept")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<decimal>("U8Number")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<string>("Unit")
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
+
+                    b.Property<decimal>("Weight")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<int>("iOrder")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("MarketBom");
+                });
+
             modelBuilder.Entity("iData.Marketing.OaApply", b =>
                 {
                     b.Property<int>("Id")
@@ -49,6 +185,12 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("Number")
+                        .HasColumnType("decimal(3,2)");
+
+                    b.Property<string>("Question")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(5)")
                         .HasMaxLength(5);
@@ -60,6 +202,9 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("nbbh")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
+
+                    b.Property<string>("pglxNote")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("requestId")
                         .HasColumnType("int");
@@ -76,12 +221,28 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime?>("ActualEndDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreateUser")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
+
+                    b.Property<string>("DepartmentName")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<bool>("IsClose")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsLeaf")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
@@ -90,10 +251,14 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OaApplyId")
+                    b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
                     b.Property<string>("PersonGh")
@@ -110,10 +275,28 @@ namespace Web.Migrations.MyDb
                     b.Property<DateTime?>("PlanStartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("TaskName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("PriceStatus")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("Scope")
+                        .HasColumnType("nvarchar(max)")
+                        .HasMaxLength(2147483647);
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(10, 2)");
+
+                    b.Property<string>("UrlPath")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
                     b.Property<int>("Ver")
+                        .HasColumnType("int");
+
+                    b.Property<int>("iOrder")
+                        .HasColumnType("int");
+
+                    b.Property<int>("mailId")
                         .HasColumnType("int");
 
                     b.Property<int>("requestId")
@@ -121,7 +304,408 @@ namespace Web.Migrations.MyDb
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ParentId");
+
                     b.ToTable("PriceCollection");
+                });
+
+            modelBuilder.Entity("iData.Marketing.PriceDept", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("AssistWorkerRate")
+                        .HasColumnType("decimal(5, 2)");
+
+                    b.Property<int>("BomId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Budget")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreateUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("DeptNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeptType")
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
+
+                    b.Property<decimal>("DirectLabor")
+                        .HasColumnType("decimal(5, 2)");
+
+                    b.Property<int>("EnumId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FrockCost")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FrockName")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<int>("FrockNumber")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("LaborRate")
+                        .HasColumnType("decimal(5, 2)");
+
+                    b.Property<string>("MachineAttr")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<int>("MachineId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MachineName")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<decimal>("MachineRate")
+                        .HasColumnType("decimal(5, 2)");
+
+                    b.Property<decimal>("MachineValue")
+                        .HasColumnType("decimal(5, 2)");
+
+                    b.Property<decimal>("ManhourRate")
+                        .HasColumnType("decimal(5, 2)");
+
+                    b.Property<DateTime?>("ModifyTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifyUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<decimal>("PassRate")
+                        .HasColumnType("decimal(5, 2)");
+
+                    b.Property<decimal>("Period")
+                        .HasColumnType("decimal(5, 2)");
+
+                    b.Property<int>("PriceCollectionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PriceDept");
+                });
+
+            modelBuilder.Entity("iData.Marketing.PriceMarket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BomId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreateUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("DeptType")
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
+
+                    b.Property<int>("EnumId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifyTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifyUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<int>("PriceCollectionId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PriceCost")
+                        .HasColumnType("decimal(10, 2)");
+
+                    b.Property<decimal>("PriceNumber")
+                        .HasColumnType("decimal(10, 2)");
+
+                    b.Property<decimal>("PriceSum")
+                        .HasColumnType("decimal(15, 2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PriceMarket");
+                });
+
+            modelBuilder.Entity("iData.Marketing.PriceModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BomId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BudgetAmount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreateUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("DeptType")
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
+
+                    b.Property<decimal>("ModelLost")
+                        .HasColumnType("decimal(6, 2)");
+
+                    b.Property<string>("ModelName")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime?>("ModifyTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifyUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<int>("OutRate")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PriceCollectionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("dcfs")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("hkyg")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("jksy")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PriceModel");
+                });
+
+            modelBuilder.Entity("iData.Marketing.PricePacking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("AftersalesService")
+                        .HasColumnType("decimal(7, 4)");
+
+                    b.Property<int>("BomId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Container")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<decimal>("ContainerCost")
+                        .HasColumnType("decimal(7, 4)");
+
+                    b.Property<string>("ContainerSize")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreateUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("DeptType")
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
+
+                    b.Property<decimal>("LogisticCost")
+                        .HasColumnType("decimal(7, 4)");
+
+                    b.Property<DateTime?>("ModifyTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifyUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<decimal>("Others")
+                        .HasColumnType("decimal(7, 4)");
+
+                    b.Property<decimal>("PackingCost")
+                        .HasColumnType("decimal(7, 4)");
+
+                    b.Property<int>("PackingId")
+                        .HasColumnType("int")
+                        .HasMaxLength(20);
+
+                    b.Property<int>("PriceCollectionId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("StorageFee")
+                        .HasColumnType("decimal(7, 4)");
+
+                    b.Property<decimal>("TranportationCost")
+                        .HasColumnType("decimal(17, 4)");
+
+                    b.Property<decimal>("bzfy")
+                        .HasColumnType("decimal(7, 4)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PricePacking");
+                });
+
+            modelBuilder.Entity("iData.Marketing.PricePt", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BomId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreateUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<int>("EnumId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifyTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifyUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<int>("PriceCollectionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PriceDeptId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PtCost")
+                        .HasColumnType("decimal(10, 2)");
+
+                    b.Property<string>("PtName")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("PtNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("PtNumber")
+                        .HasColumnType("decimal(10, 2)");
+
+                    b.Property<decimal>("PtSum")
+                        .HasColumnType("decimal(10, 2)");
+
+                    b.Property<string>("PtType")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<int>("iOrder")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PricePt");
+                });
+
+            modelBuilder.Entity("iData.Marketing.WgYcl", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BomId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CgNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreateUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("DeptType")
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
+
+                    b.Property<decimal>("Matching")
+                        .HasColumnType("decimal(6, 2)");
+
+                    b.Property<DateTime?>("ModifyTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifyUser")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<int>("PriceCollectionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SZ")
+                        .HasColumnType("nvarchar(1)")
+                        .HasMaxLength(1);
+
+                    b.Property<decimal>("ScrapRate")
+                        .HasColumnType("decimal(10, 4)");
+
+                    b.Property<string>("SupplierName")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<decimal>("Transport")
+                        .HasColumnType("decimal(10, 4)");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(10, 4)");
+
+                    b.Property<string>("UnitType")
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WgYcl");
                 });
 
             modelBuilder.Entity("iData.Mobile.WeChatUser", b =>
@@ -507,6 +1091,10 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("Scope")
                         .HasColumnType("nvarchar(max)")
                         .HasMaxLength(2147483647);
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
                     b.Property<int>("iOrder")
                         .HasColumnType("int");
@@ -4525,8 +5113,8 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(50);
 
                     b.Property<string>("Reason")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<int>("Ver")
                         .HasColumnType("int");
@@ -4779,6 +5367,9 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(max)")
                         .HasMaxLength(2147483647);
 
+                    b.Property<bool>("canNa")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("canWrite")
                         .HasColumnType("bit");
 
@@ -5011,6 +5602,20 @@ namespace Web.Migrations.MyDb
                     b.ToTable("ContractUpLoadFile");
 
                     b.HasDiscriminator().HasValue("ContractUpLoadFile");
+                });
+
+            modelBuilder.Entity("iData.Marketing.MarketBom", b =>
+                {
+                    b.HasOne("iData.Marketing.MarketBom", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId");
+                });
+
+            modelBuilder.Entity("iData.Marketing.PriceCollection", b =>
+                {
+                    b.HasOne("iData.Marketing.PriceCollection", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId");
                 });
 
             modelBuilder.Entity("iData.System.Account", b =>
