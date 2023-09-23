@@ -11,6 +11,7 @@ namespace iData.Marketing
     [Table(nameof(MarketBom))]
     public class MarketBom:TreeBase<MarketBom>
     {
+        public string FullName { get; set; }
         public string Inventory { get; set; }
         [MaxLength(50)]
         public string FsCode { get; set; }
@@ -29,7 +30,7 @@ namespace iData.Marketing
         public decimal Number { get; set; }
         [Column(TypeName = "decimal(6,2)")]
         public decimal U8Number { get; set; }
-        [Column(TypeName = "decimal(6,2)")]
+        [Column(TypeName = "decimal(8,4)")]
         public decimal Weight { get; set; }
         [MaxLength(100), Display(Name = "毛重")]
         public string GrossWeight { get; set; }
@@ -37,7 +38,7 @@ namespace iData.Marketing
         public string Color { get; set; }
         [MaxLength(100), Display(Name = "油漆")]
         public string Paint { get; set; }
-        [MaxLength(100), Display(Name = "表面处理")]
+        [Display(Name = "表面处理")]
         public string Surface { get; set; }
         [MaxLength(100), Display(Name = "规格")]
         public string Specs { get; set; }

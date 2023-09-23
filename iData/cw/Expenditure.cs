@@ -17,6 +17,8 @@ namespace iData.cw
         //public string DateProp { get; set; }
         [Display(Name = "时长"), Column(TypeName = "decimal(8, 2)")]
         public decimal WorkHour { get;set;}
+        //备注
+        public string Note { get; set; }
         public int ProjectListId { get;set;}
     }
 }

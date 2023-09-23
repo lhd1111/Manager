@@ -9,11 +9,11 @@ namespace iData.Marketing
     [Table(nameof(PricePt))]
     public class PricePt:Base
     {
-        [Column(TypeName = "decimal(10, 2)")]
+        [Column(TypeName = "decimal(10, 4)")]
         public decimal PtSum { get; set; }
         [Column(TypeName = "decimal(10, 2)")]
         public decimal PtCost { get; set; }
-        [Column(TypeName = "decimal(10, 2)")]
+        [Column(TypeName = "decimal(10, 4)")]
         public decimal PtNumber { get; set; }
         [MaxLength(20)]
         public string PtName { get; set; }

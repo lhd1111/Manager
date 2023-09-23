@@ -11,8 +11,6 @@ namespace iData.Marketing
     public class WgYcl : Base
     {
 
-        [MaxLength(100)]
-        public string Name { get; set; }
         [MaxLength(1)]
         //S/Y/N
         public string SZ { get; set; }
@@ -31,6 +29,8 @@ namespace iData.Marketing
         public string DeptType { get; set; }
         [Display(Name = "汇率"), Column(TypeName = "decimal(3, 2)")]
         public decimal ExchangeRate { get; set; } = 1;
+        [Display(Name = "关税"), Column(TypeName = "decimal(3, 2)")]
+        public decimal Tariff { get; set; } = 1;
         [Display(Name = "配比"), Column(TypeName = "decimal(6, 2)")]
         public decimal Matching { get; set; } = 0;
         [Display(Name = "备注")]

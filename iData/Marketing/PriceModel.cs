@@ -27,6 +27,13 @@ namespace iData.Marketing
         public string dcfs { get; set; }
         [Display(Name = "各种类型"), MaxLength(5)]
         public string DeptType { get; set; }
+        [Display(Name = "运费"), MaxLength(5)]
+        public int TransportModel { get; set; }
+        [Display(Name = "备注"), MaxLength(5)]
+        public string Note { get; set; }
+        [Display(Name = "组合"), MaxLength(5)]
+        public int Combination { get; set; }
+
         public int BomId { get;set;}
         public int PriceCollectionId { get; set; }
     }

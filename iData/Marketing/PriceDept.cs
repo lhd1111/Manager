@@ -20,7 +20,7 @@ namespace iData.Marketing
         public float Period { get; set; }
         [Display(Name = "产品合格率"), Column(TypeName = "decimal(5, 2)")]
         public decimal PassRate { get; set; } = 1;
-        [Display(Name = "工装名称"), MaxLength(50)]
+        [Display(Name = "工装名称"), MaxLength(100)]
         public string FrockName { get; set; }
         [Display(Name = "工装数量")]
         public int FrockNumber { get; set; }
@@ -37,7 +37,7 @@ namespace iData.Marketing
 
         [Display(Name = "机台名"), MaxLength(20)]
         public string MachineName { get; set; }
-        [Display(Name = "机台值"), Column(TypeName = "decimal(5, 2)")]
+        [Display(Name = "机台值"), Column(TypeName = "decimal(8, 4)")]
         public decimal MachineValue { get; set; }
         [Display(Name ="试验预算")]
         public int Budget { get; set; }

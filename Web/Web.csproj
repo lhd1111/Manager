@@ -151,6 +151,12 @@
     <Compile Remove="Migrations\MyDb\20230419025458_bom新增料头.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20230419025754_bom新增料头.cs" />
     <Compile Remove="Migrations\MyDb\20230419025754_bom新增料头.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230825082830_新增来访登记.cs" />
+    <Compile Remove="Migrations\MyDb\20230825082830_新增来访登记.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230912070707_修正油总计位数.cs" />
+    <Compile Remove="Migrations\MyDb\20230912070707_修正油总计位数.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20230912071053_修正油总计位数.cs" />
+    <Compile Remove="Migrations\MyDb\20230912071053_修正油总计位数.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

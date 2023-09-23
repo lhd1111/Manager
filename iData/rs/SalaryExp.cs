@@ -24,7 +24,7 @@ namespace iData.rs
         public int requestid { get; set; }
         [Display(Name = "工号"), MaxLength(10)]
         public string gh { get; set; }
-        [MaxLength(50)]
+        [MaxLength(500)]
         public string Note { get; set; }
     }
 }

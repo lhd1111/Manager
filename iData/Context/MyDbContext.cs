@@ -119,6 +119,11 @@ namespace iData.Context
         public DbSet<TestQuestion> TestQuestions { get; set; }
         public DbSet<PersonAnswer> PersonAnswers { get; set; }
         public DbSet<PersonTest> PersonTests { get; set; }
+        [Display(Name = "来访登记表")]
+        public DbSet<Reception> Reception { get; set; }
+        [Display(Name = "食堂菜单")]
+        public DbSet<CanteeMenu> CanteeMenus { get; set; }
+        
         public DbSet<Psychology> Psychologies { get; set; }
         
         [Display(Name = "薪资吻合度")]

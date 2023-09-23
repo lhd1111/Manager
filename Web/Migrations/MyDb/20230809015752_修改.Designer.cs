@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230809015752_修改")]
+    partial class 修改
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,9 +53,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("FsCode")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
-
-                    b.Property<string>("FullName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GrossWeight")
                         .HasColumnType("nvarchar(100)")
@@ -119,7 +118,8 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(100);
 
                     b.Property<string>("Surface")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Tooling")
                         .HasColumnType("nvarchar(50)")
@@ -145,7 +145,7 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(5);
 
                     b.Property<decimal>("Weight")
-                        .HasColumnType("decimal(8,4)");
+                        .HasColumnType("decimal(6,2)");
 
                     b.Property<int>("iOrder")
                         .HasColumnType("int");
@@ -351,8 +351,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int");
 
                     b.Property<string>("FrockName")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<int>("FrockNumber")
                         .HasColumnType("int");
@@ -375,7 +375,7 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("decimal(5, 2)");
 
                     b.Property<decimal>("MachineValue")
-                        .HasColumnType("decimal(8, 4)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<decimal>("ManhourRate")
                         .HasColumnType("decimal(5, 2)");
@@ -491,19 +491,11 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(5)")
-                        .HasMaxLength(5);
-
                     b.Property<int>("OutRate")
                         .HasColumnType("int");
 
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
-
-                    b.Property<int>("TransportModel")
-                        .HasColumnType("int")
-                        .HasMaxLength(5);
 
                     b.Property<string>("dcfs")
                         .HasColumnType("nvarchar(10)")
@@ -638,10 +630,10 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("PtNumber")
-                        .HasColumnType("decimal(10, 4)");
+                        .HasColumnType("decimal(10, 2)");
 
                     b.Property<decimal>("PtSum")
-                        .HasColumnType("decimal(10, 4)");
+                        .HasColumnType("decimal(10, 2)");
 
                     b.Property<string>("PtType")
                         .HasColumnType("nvarchar(20)")
@@ -692,6 +684,10 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
 
@@ -705,9 +701,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("SupplierName")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
-
-                    b.Property<decimal>("Tariff")
-                        .HasColumnType("decimal(3, 2)");
 
                     b.Property<decimal>("Transport")
                         .HasColumnType("decimal(10, 4)");
@@ -2501,51 +2494,6 @@ namespace Web.Migrations.MyDb
                     b.ToTable("CalendarKq");
                 });
 
-            modelBuilder.Entity("iData.rs.CanteeMenu", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("BigPrice")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("DishName")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("DishNote")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DishType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsCg")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("SmallPrice")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CanteeMenu");
-                });
-
             modelBuilder.Entity("iData.rs.ColToCol", b =>
                 {
                     b.Property<int>("Id")
@@ -4025,66 +3973,6 @@ namespace Web.Migrations.MyDb
                     b.ToTable("Psychology");
                 });
 
-            modelBuilder.Entity("iData.rs.Reception", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("IsAngree")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(1)");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("carNo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("deptName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("deptNameD")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("personMobile")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("personMobileB")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("personName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("personNameB")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("personNumer")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("personReason")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("startTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Reception");
-                });
-
             modelBuilder.Entity("iData.rs.SalaryAttendance", b =>
                 {
                     b.Property<int>("Id")
@@ -4361,8 +4249,8 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(10);
 
                     b.Property<string>("Note")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<int?>("PersonId")
                         .HasColumnType("int");
