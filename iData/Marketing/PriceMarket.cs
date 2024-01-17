@@ -10,9 +10,9 @@ namespace iData.Marketing
     [Table(nameof(PriceMarket))]
     public class PriceMarket:Base
     {
-        [Column(TypeName = "decimal(10, 2)")]
+        [Column(TypeName = "decimal(10, 3)")]
         public decimal PriceCost { get; set; }
-        [Column(TypeName = "decimal(10, 2)")]
+        [Column(TypeName = "decimal(10, 3)")]
         public decimal PriceNumber { get; set; }
         [Column(TypeName = "decimal(15, 2)")]
         public decimal PriceSum { get; set; }

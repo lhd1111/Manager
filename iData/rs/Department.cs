@@ -16,22 +16,15 @@ namespace iData.rs
         public int? ParentId { get; set; }
         [MaxLength(50)]
         public string Name { get; set; }
+        public string FullName { get; set; }
         [MaxLength(50)]
         public string Scope { get; set; }
         public int Level { get; set; }
-        public string Path { get; set; }
         public int iOrder { get; set; }
         public bool IsLeaf { get; set; } = true;
         public int oDepartmentId { get; set; }
-        [MaxLength(10)]
-        public string rDepartmentId { get; set; }
-        [Display(Name = "考勤机的部门编号")]
-        public int kDepartmentId { get; set; }
-
         [Display(Name="邮箱id")]
         public string mDepartmentId { get; set; }
-        [Display(Name = "财务u8部门"), MaxLength(10)]
-        public string uDepartmnetId { get; set; }
         [Display(Name ="u8数据库编号")]
         public string uDataBase { get; set; }
         [Display(Name ="人事数据库编号")]
@@ -40,6 +33,8 @@ namespace iData.rs
         public string kDataBase { get; set; }
         [Display(Name ="工号前缀")]
         public string oGh { get; set; }
+        public bool IsDel { get; set; } = false;
+        public DateTime? DelTime { get; set; }
         public virtual Department Parent { get; set; }
         public virtual ICollection<Department> Children { get; set; }
         public virtual ICollection<Account> Accounts { get; set; } = new List<Account>();

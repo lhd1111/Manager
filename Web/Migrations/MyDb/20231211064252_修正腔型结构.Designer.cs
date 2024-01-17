@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231211064252_修正腔型结构")]
+    partial class 修正腔型结构
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,8 +29,8 @@ namespace Web.Migrations.MyDb
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Characteristic")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Color")
                         .HasColumnType("nvarchar(100)")
@@ -2747,14 +2749,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("DelTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDel")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("IsLeaf")
                         .HasColumnType("bit");
@@ -2768,6 +2764,9 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Path")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Scope")
                         .HasColumnType("nvarchar(50)")
@@ -5334,10 +5333,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("DevelopLevel")
-                        .HasColumnType("nvarchar(1)")
-                        .HasMaxLength(1);
-
                     b.Property<string>("Dimensional")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -5353,14 +5348,6 @@ namespace Web.Migrations.MyDb
                     b.Property<bool>("IsClose")
                         .HasColumnType("bit")
                         .HasMaxLength(10);
-
-                    b.Property<string>("MarketGh")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("MarketName")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");

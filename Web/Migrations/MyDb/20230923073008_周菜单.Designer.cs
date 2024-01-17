@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230923073008_周菜单")]
+    partial class 周菜单
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,8 +29,8 @@ namespace Web.Migrations.MyDb
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Characteristic")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Color")
                         .HasColumnType("nvarchar(100)")
@@ -90,8 +92,8 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(20);
 
                     b.Property<string>("ModleCavity")
-                        .HasColumnType("nvarchar(max)")
-                        .HasMaxLength(2147483647);
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(100)")
@@ -396,9 +398,6 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
 
-                    b.Property<int>("iGroup")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("PriceDept");
@@ -439,10 +438,10 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int");
 
                     b.Property<decimal>("PriceCost")
-                        .HasColumnType("decimal(10, 3)");
+                        .HasColumnType("decimal(10, 2)");
 
                     b.Property<decimal>("PriceNumber")
-                        .HasColumnType("decimal(10, 3)");
+                        .HasColumnType("decimal(10, 2)");
 
                     b.Property<decimal>("PriceSum")
                         .HasColumnType("decimal(15, 2)");
@@ -466,7 +465,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int");
 
                     b.Property<int>("Combination")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(5);
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
@@ -494,7 +494,8 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(20);
 
                     b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
 
                     b.Property<int>("OutRate")
                         .HasColumnType("int");
@@ -503,7 +504,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int");
 
                     b.Property<int>("TransportModel")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(5);
 
                     b.Property<string>("dcfs")
                         .HasColumnType("nvarchar(10)")
@@ -2528,12 +2530,8 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("DishType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ForceMinute")
-                        .HasColumnType("int");
-
-                    b.Property<string>("IsCg")
-                        .HasColumnType("nvarchar(1)")
-                        .HasMaxLength(1);
+                    b.Property<bool>("IsCg")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
@@ -2552,54 +2550,21 @@ namespace Web.Migrations.MyDb
 
             modelBuilder.Entity("iData.rs.Catering", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Key")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DishType")
-                        .HasColumnType("nvarchar(5)")
-                        .HasMaxLength(5);
 
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(4)")
-                        .HasMaxLength(4);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Week0")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Week1")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Week2")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Week3")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Week4")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Week5")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<string>("Week6")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.HasKey("Id");
+                    b.HasKey("Key");
 
                     b.ToTable("Catering");
                 });
@@ -2747,15 +2712,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("DelTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FullName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDel")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("IsLeaf")
                         .HasColumnType("bit");
 
@@ -2769,6 +2725,9 @@ namespace Web.Migrations.MyDb
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Path")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Scope")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -2778,6 +2737,9 @@ namespace Web.Migrations.MyDb
 
                     b.Property<string>("kDataBase")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("kDepartmentId")
+                        .HasColumnType("int");
 
                     b.Property<string>("mDepartmentId")
                         .HasColumnType("nvarchar(max)");
@@ -2791,68 +2753,22 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("rDataBase")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("rDepartmentId")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
                     b.Property<string>("uDataBase")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("uDepartmnetId")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
 
                     b.HasKey("Id");
 
                     b.HasIndex("ParentId");
 
                     b.ToTable("Department");
-                });
-
-            modelBuilder.Entity("iData.rs.DishRecord", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("DishNameId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DishTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("IsQc")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("fl")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
-
-                    b.Property<string>("gh")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<float>("je")
-                        .HasColumnType("real");
-
-                    b.Property<string>("kw")
-                        .HasColumnType("nvarchar(5)")
-                        .HasMaxLength(5);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DishRecord");
                 });
 
             modelBuilder.Entity("iData.rs.EducationExp", b =>
@@ -3821,8 +3737,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<decimal>("Piece")
-                        .HasColumnType("decimal(5, 2)");
+                    b.Property<float>("Piece")
+                        .HasColumnType("real");
 
                     b.Property<DateTime>("dDate")
                         .HasColumnType("datetime2");
@@ -3831,8 +3747,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<decimal>("oPiece")
-                        .HasColumnType("decimal(5, 2)");
+                    b.Property<float>("oPiece")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
@@ -5334,10 +5250,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("DevelopLevel")
-                        .HasColumnType("nvarchar(1)")
-                        .HasMaxLength(1);
-
                     b.Property<string>("Dimensional")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -5353,14 +5265,6 @@ namespace Web.Migrations.MyDb
                     b.Property<bool>("IsClose")
                         .HasColumnType("bit")
                         .HasMaxLength(10);
-
-                    b.Property<string>("MarketGh")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("MarketName")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");

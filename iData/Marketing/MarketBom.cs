@@ -46,7 +46,7 @@ namespace iData.Marketing
         public string Tooling { get; set; }
         [MaxLength(500), Display(Name = "材料")]
         public string Material { get; set; }
-        [MaxLength(50), Display(Name = "腔型结构")]
+        [MaxLength(int.MaxValue), Display(Name = "腔型结构")]
         public string ModleCavity { get; set; }
         //项目关闭时触发
         [Display(Name = "腔型数量")]
@@ -58,7 +58,7 @@ namespace iData.Marketing
 
         [MaxLength(5), Display(Name = "自制/外协/标准件")]
         public string MakeMothod { get; set; }
-        [MaxLength(50), Display(Name = "标识")]
+        [MaxLength(100), Display(Name = "标识")]
         public string Characteristic { get; set; }
         [Display(Name = "备注")]
         public string Comments { get; set; }

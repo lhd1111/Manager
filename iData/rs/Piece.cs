@@ -11,10 +11,10 @@ namespace iData.rs
     {
         [Display(Name ="工号"),MaxLength(20)]
         public string gh { get; set; }
-        [Display(Name ="计件工时")]
-        public float Piece { get; set; }
-        [Display(Name = "异常工时")]
-        public float oPiece { get; set; }
+        [Display(Name ="计件工时"),Column(TypeName = "decimal(5, 2)")]
+        public decimal Piece { get; set; }
+        [Display(Name = "异常工时"),Column(TypeName = "decimal(5, 2)")]
+        public decimal oPiece { get; set; }
         [Display(Name ="计件日期")]
         public DateTime dDate { get; set; }
     }

@@ -157,6 +157,14 @@
     <Compile Remove="Migrations\MyDb\20230912070707_修正油总计位数.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20230912071053_修正油总计位数.cs" />
     <Compile Remove="Migrations\MyDb\20230912071053_修正油总计位数.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20231031033702_点餐记录.cs" />
+    <Compile Remove="Migrations\MyDb\20231031033702_点餐记录.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20231031035349_点餐记录口味及份数.cs" />
+    <Compile Remove="Migrations\MyDb\20231031035349_点餐记录口味及份数.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20231211063140_修正腔型结构.cs" />
+    <Compile Remove="Migrations\MyDb\20231211063140_修正腔型结构.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240105054555_部门新增软删除.cs" />
+    <Compile Remove="Migrations\MyDb\20240105054555_部门新增软删除.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

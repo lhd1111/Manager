@@ -14,9 +14,11 @@ namespace iData.rs
 
         [MaxLength(20)]
         public string DishName { get; set; }
-        public bool IsCg { get; set; }
+        [MaxLength(1)]
+        public string IsCg { get; set; }
         public int SmallPrice { get; set; }
         public int BigPrice { get; set; }
         public string DishNote { get; set; }
+        public int ForceMinute { get; set; }
     }
 }

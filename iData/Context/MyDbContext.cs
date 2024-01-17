@@ -123,7 +123,13 @@ namespace iData.Context
         public DbSet<Reception> Reception { get; set; }
         [Display(Name = "食堂菜单")]
         public DbSet<CanteeMenu> CanteeMenus { get; set; }
-        
+        [Display(Name = "周菜单")]
+        public DbSet<WeekMenu> WeekMenus { get; set; }
+        [Display(Name = "餐别")]
+        public DbSet<Catering> Caterings { get; set; }
+        [Display(Name = "就餐记录")]
+        public DbSet<DishRecord> DishRecords { get; set; }
+
         public DbSet<Psychology> Psychologies { get; set; }
         
         [Display(Name = "薪资吻合度")]

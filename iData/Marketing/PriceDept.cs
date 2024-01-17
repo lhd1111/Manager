@@ -47,6 +47,7 @@ namespace iData.Marketing
         public int EnumId { get; set; } = 0;
 
         public int BomId { get; set; }
+        public int iGroup{ get; set; }
         public int PriceCollectionId { get; set; }
     }
 }
