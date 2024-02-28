@@ -49,7 +49,13 @@ namespace iData.rs
         [Display(Name ="现居住地"), MaxLength(50)]
         public string LiveLocation { get; set; }
         [Display(Name ="邮箱"), MaxLength(50)]
-        public string Email { get; set; } 
+        public string Email { get; set; }
+        [Display(Name = "电子账号"), MaxLength(50)]
+        public string WeChatQQ { get; set; }
+        [Display(Name = "通勤方式"), MaxLength(50)]
+        public string CommutingMethod { get; set; }
+        [Display(Name = "通勤时间"), MaxLength(50)]
+        public string CommutingDuration { get; set; }
         [Display(Name ="联系电话"), MaxLength(20)]
         public string Tel { get; set; }
         [Display(Name ="紧急联系人"),MaxLength(20)]
@@ -180,6 +186,7 @@ namespace iData.rs
         [Display(Name = "卡背面")]
         public string CardBack { get; set; }
         public virtual ICollection<EducationExp> EducationExps { get; set; } = new List<EducationExp>();
+        public virtual ICollection<FamilyExp> FamilyExps { get; set; } = new List<FamilyExp>();
         public virtual ICollection<TrainExp> TrainExps { get; set; } = new List<TrainExp>();
         public virtual ICollection<WorkExp> WorkExps { get; set; } = new List<WorkExp>();
         public virtual ICollection<SalaryExp> Salaries { get; set; } = new List<SalaryExp>();

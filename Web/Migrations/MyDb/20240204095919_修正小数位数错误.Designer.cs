@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240204095919_修正小数位数错误")]
+    partial class 修正小数位数错误
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -309,89 +311,6 @@ namespace Web.Migrations.MyDb
                     b.HasIndex("ParentId");
 
                     b.ToTable("PriceCollection");
-                });
-
-            modelBuilder.Entity("iData.Marketing.PriceCost", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("DeptType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("EnumId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PriceCollectionId")
-                        .HasColumnType("int");
-
-                    b.Property<float>("iTotal")
-                        .HasColumnType("real");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PriceCost");
-                });
-
-            modelBuilder.Entity("iData.Marketing.PriceCostDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("EnumId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("PriceCollectionId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("iOrder")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("iValue")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<string>("iYear")
-                        .HasColumnType("nvarchar(5)")
-                        .HasMaxLength(5);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PriceCostDetail");
                 });
 
             modelBuilder.Entity("iData.Marketing.PriceDept", b =>
@@ -794,9 +713,6 @@ namespace Web.Migrations.MyDb
                     b.Property<float>("ProductPrice")
                         .HasColumnType("real");
 
-                    b.Property<float>("SingleNumber")
-                        .HasColumnType("real");
-
                     b.Property<float>("SingleUsage")
                         .HasColumnType("real");
 
@@ -804,9 +720,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("real");
 
                     b.Property<float>("UnitPrice")
-                        .HasColumnType("real");
-
-                    b.Property<float>("UnitPrice1")
                         .HasColumnType("real");
 
                     b.Property<float>("sMachine")

@@ -165,6 +165,18 @@
     <Compile Remove="Migrations\MyDb\20231211063140_修正腔型结构.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20240105054555_部门新增软删除.cs" />
     <Compile Remove="Migrations\MyDb\20240105054555_部门新增软删除.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240117031118_pricesale.cs" />
+    <Compile Remove="Migrations\MyDb\20240117031118_pricesale.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240124014922_售价表修改.cs" />
+    <Compile Remove="Migrations\MyDb\20240124014922_售价表修改.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240126082200_新增签名.cs" />
+    <Compile Remove="Migrations\MyDb\20240126082200_新增签名.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240126082657_新增签名.cs" />
+    <Compile Remove="Migrations\MyDb\20240126082657_新增签名.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240131025539_修.cs" />
+    <Compile Remove="Migrations\MyDb\20240131025539_修.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240204093141_修正小数位数错误.cs" />
+    <Compile Remove="Migrations\MyDb\20240204093141_修正小数位数错误.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

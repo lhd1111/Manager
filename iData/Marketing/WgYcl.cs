@@ -11,9 +11,8 @@ namespace iData.Marketing
     public class WgYcl : Base
     {
 
-        [MaxLength(1)]
-        //S/Y/N
-        public string SZ { get; set; }
+        //客户指定改模具费用
+        public int ModelCg { get; set; }
         [MaxLength(100)]
         public string SupplierName{get;set;}
         [Display(Name = "单价"), Column(TypeName = "decimal(10, 4)")]

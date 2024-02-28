@@ -65,6 +65,7 @@ namespace iData.Context
         public DbSet<EducationExp> EducationExps { get; set; }
         public DbSet<WorkExp> WorkExps { get; set; }
         public DbSet<TrainExp> TrainExps { get; set; }
+        public DbSet<FamilyExp> FamilyExps { get; set; }
         public DbSet<SalaryExp> Salaries { get; set; }
         public DbSet<ColToCol> ColToCols { get; set; }
         [Display(Name ="微信意见")]
@@ -131,7 +132,8 @@ namespace iData.Context
         public DbSet<DishRecord> DishRecords { get; set; }
 
         public DbSet<Psychology> Psychologies { get; set; }
-        
+        public DbSet<Signature> Signatures { get; set; }
+
         [Display(Name = "薪资吻合度")]
         public DbSet<SalarySummary> SalarySummaries { get; set; }
         //固定资产管理
@@ -141,6 +143,8 @@ namespace iData.Context
         public DbSet<FixedAssetDetail> FixedAssetDetails { get; set; }
         [Display(Name = "固定资产领用明细表")]
         public DbSet<FixedAssetApply> FixedAssetApplies { get; set; }
+        public DbSet<PriceCost> PriceCosts { get; set; }
+        public DbSet<PriceCostDetail> PriceCostDetails { get; set; }
 
         //技术中心
         public DbSet<bom> Boms { get; set; }
@@ -219,6 +223,9 @@ namespace iData.Context
         public DbSet<PricePacking> PricePackings { get; set; }
         public DbSet<PriceMarket> PriceMarkets { get; set; }
         public DbSet<PricePt> PricePts { get; set; }
+        //售价明细表
+        public DbSet<PriceSelling> PriceSellings { get; set; }
+
 
 
 
