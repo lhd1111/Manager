@@ -43,6 +43,8 @@ namespace iData.Marketing
         public int Budget { get; set; }
         [Display(Name ="备注")]
         public string DeptNote { get;set; }
+        [Display(Name = "行合计"), Column(TypeName = "decimal(12, 4)")]
+        public decimal RowSummary { get; set; } = 0;
         public int MachineId { get; set; }
         public int EnumId { get; set; } = 0;
 

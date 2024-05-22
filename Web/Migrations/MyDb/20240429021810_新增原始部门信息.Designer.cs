@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240429021810_新增原始部门信息")]
+    partial class 新增原始部门信息
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -482,9 +484,6 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("RowSummary")
-                        .HasColumnType("decimal(12, 4)");
-
                     b.Property<int>("iGroup")
                         .HasColumnType("int");
 
@@ -535,9 +534,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("PriceSum")
                         .HasColumnType("decimal(15, 2)");
-
-                    b.Property<decimal>("RowSummary")
-                        .HasColumnType("decimal(12, 4)");
 
                     b.HasKey("Id");
 
@@ -874,9 +870,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("RowSummary")
-                        .HasColumnType("decimal(12, 4)");
 
                     b.Property<decimal>("ScrapRate")
                         .HasColumnType("decimal(10, 4)");

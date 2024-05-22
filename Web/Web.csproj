@@ -177,6 +177,16 @@
     <Compile Remove="Migrations\MyDb\20240131025539_修.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20240204093141_修正小数位数错误.cs" />
     <Compile Remove="Migrations\MyDb\20240204093141_修正小数位数错误.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240229073951_修正decimal.cs" />
+    <Compile Remove="Migrations\MyDb\20240229073951_修正decimal.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240304092036_新增备注.cs" />
+    <Compile Remove="Migrations\MyDb\20240304092036_新增备注.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240325061029_手顺评分表.cs" />
+    <Compile Remove="Migrations\MyDb\20240325061029_手顺评分表.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240325061416_手顺评分表.cs" />
+    <Compile Remove="Migrations\MyDb\20240325061416_手顺评分表.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20240327081633_新增开发部门.cs" />
+    <Compile Remove="Migrations\MyDb\20240327081633_新增开发部门.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

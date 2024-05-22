@@ -36,6 +36,7 @@ namespace iData.Marketing
         public decimal Total { get; set; } = 0;
         //邮件发送的依赖关系
         public int mailId { get; set; }
+        public int resetTimes { get; set; } = 0;
 
     }
 }

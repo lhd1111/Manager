@@ -24,6 +24,11 @@ namespace iData.rs
         public int requestid { get; set; }
         [Display(Name = "工号"), MaxLength(10)]
         public string gh { get; set; }
+        [Display(Name = "转接工号"), MaxLength(10)]
+        public string zjgh { get; set; }
+        [MaxLength(500)]
+        public string yBm { get; set; }
+
         [MaxLength(500)]
         public string Note { get; set; }
     }

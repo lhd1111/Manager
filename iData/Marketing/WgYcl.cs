@@ -34,6 +34,9 @@ namespace iData.Marketing
         public decimal Matching { get; set; } = 0;
         [Display(Name = "备注")]
         public string CgNote { get; set; }
+        [Display(Name = "行合计"), Column(TypeName = "decimal(12, 4)")]
+        public decimal RowSummary { get; set; } = 0;
+
         public int BomId { get; set; }
         public int PriceCollectionId { get; set; }
     }

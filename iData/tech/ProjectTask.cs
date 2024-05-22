@@ -9,6 +9,7 @@ namespace iData.tech
     [Table(nameof(ProjectTask))]
     public class ProjectTask : TreeBase<ProjectTask>
     {
+        public bool IsHand { get; set; } = false;
         public bool IsNa { get; set; }
         [Display(Name = "进度"), Column(TypeName = "decimal(5,2)")]
         public decimal progress { get; set; }

@@ -17,7 +17,8 @@ namespace iData.rs
         public string Judge { get; set; }
         [Display(Name ="被判人")]
         public Person Person { get; set; }
-        [Display(Name ="判定人")]
-        public Account Account { get; set; }
+        //[Display(Name ="判定人")]
+       //public Account Account { get; set; }
+       public int AccountId { get; set; }
     }
 }

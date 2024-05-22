@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240318063653_添加复位次数")]
+    partial class 添加复位次数
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -482,9 +484,6 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("RowSummary")
-                        .HasColumnType("decimal(12, 4)");
-
                     b.Property<int>("iGroup")
                         .HasColumnType("int");
 
@@ -535,9 +534,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("PriceSum")
                         .HasColumnType("decimal(15, 2)");
-
-                    b.Property<decimal>("RowSummary")
-                        .HasColumnType("decimal(12, 4)");
 
                     b.HasKey("Id");
 
@@ -875,9 +871,6 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("RowSummary")
-                        .HasColumnType("decimal(12, 4)");
-
                     b.Property<decimal>("ScrapRate")
                         .HasColumnType("decimal(10, 4)");
 
@@ -1115,9 +1108,6 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("TypeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("WorkflowId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("ApproveRequest");
@@ -1308,10 +1298,6 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("EName")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
@@ -1352,8 +1338,6 @@ namespace Web.Migrations.MyDb
                     b.HasIndex("ParentId");
 
                     b.ToTable("TwoEnum");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("TwoEnum");
                 });
 
             modelBuilder.Entity("iData.System.UpLoadFile", b =>
@@ -4454,12 +4438,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("carNo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("cardf")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cards")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("deptName")
                         .HasColumnType("nvarchar(max)");
 
@@ -4790,14 +4768,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("requestid")
                         .HasColumnType("int");
-
-                    b.Property<string>("yBm")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
-
-                    b.Property<string>("zjgh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
 
                     b.Property<string>("zwdj")
                         .HasColumnType("nvarchar(10)")
@@ -5627,9 +5597,6 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("HandKind")
                         .HasColumnType("int");
 
-                    b.Property<int>("HandNumber")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsLeaf")
                         .HasColumnType("bit");
 
@@ -5638,9 +5605,6 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(100);
 
                     b.Property<int>("Level")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MainNumber")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifyTime")
@@ -5659,21 +5623,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Pd0")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pd2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pd3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pd4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pd5")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProjectTask")
                         .HasColumnType("nvarchar(max)");
@@ -5701,44 +5650,6 @@ namespace Web.Migrations.MyDb
                     b.HasIndex("ParentId");
 
                     b.ToTable("ProjectHand");
-                });
-
-            modelBuilder.Entity("iData.tech.ProjectHandApprove", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int?>("HandId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Score")
-                        .HasColumnType("decimal(5,2)");
-
-                    b.Property<int>("TaskId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProjectHandApprove");
                 });
 
             modelBuilder.Entity("iData.tech.ProjectList", b =>
@@ -5780,10 +5691,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("DevelopLevel")
                         .HasColumnType("nvarchar(1)")
                         .HasMaxLength(1);
-
-                    b.Property<string>("Development")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
 
                     b.Property<string>("Dimensional")
                         .HasColumnType("nvarchar(50)")
@@ -6315,24 +6222,6 @@ namespace Web.Migrations.MyDb
                     b.HasIndex("ProjectId");
 
                     b.ToTable("Bom");
-                });
-
-            modelBuilder.Entity("iData.System.Workflow", b =>
-                {
-                    b.HasBaseType("iData.System.TwoEnum");
-
-                    b.Property<string>("Back")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Front")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("gh")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("Workflow");
-
-                    b.HasDiscriminator().HasValue("Workflow");
                 });
 
             modelBuilder.Entity("iData.System.ContractUpLoadFile", b =>

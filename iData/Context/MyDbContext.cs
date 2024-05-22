@@ -149,6 +149,7 @@ namespace iData.Context
         //技术中心
         public DbSet<bom> Boms { get; set; }
         public DbSet<Project> Projects { get; set; }
+        
 
         //系统
         public DbSet<Account> Accounts { get; set; }
@@ -161,6 +162,8 @@ namespace iData.Context
         public DbSet<ContractUpLoadFile> ContractUpLoadFiles { get; set; }
         public DbSet<ApproveRequest> ApproveRequests { get; set; }
         public DbSet<Token> Tokens { get; set; }
+        //继承自twoenum
+        public DbSet<Workflow> Workflows { get; set; }
 
         //采购
         public DbSet<Supplier> Suppliers { get; set; }
@@ -197,7 +200,9 @@ namespace iData.Context
         public DbSet<ProjectProblem> ProjectProblems { get; set; }
         public DbSet<ProjectMould> ProjectMoulds { get; set; }
         public DbSet<ProjectPoint> ProjectPoints { get; set; }
-        
+        public DbSet<ProjectHand> ProjectHands  { get; set; }
+        public DbSet<ProjectHandApprove> ProjectHandApproves { get; set; }
+
 
         //工艺部
         //机器列表

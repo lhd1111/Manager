@@ -20,6 +20,7 @@ namespace iData.System
         public string Type { get; set; }
 
         public int TypeId { get; set; }
+        public int WorkflowId { get; set; } = 0;
 
     }
 }

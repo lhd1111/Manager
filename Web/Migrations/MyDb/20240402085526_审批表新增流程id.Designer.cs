@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240402085526_审批表新增流程id")]
+    partial class 审批表新增流程id
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -482,9 +484,6 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("RowSummary")
-                        .HasColumnType("decimal(12, 4)");
-
                     b.Property<int>("iGroup")
                         .HasColumnType("int");
 
@@ -535,9 +534,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("PriceSum")
                         .HasColumnType("decimal(15, 2)");
-
-                    b.Property<decimal>("RowSummary")
-                        .HasColumnType("decimal(12, 4)");
 
                     b.HasKey("Id");
 
@@ -874,9 +870,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("RowSummary")
-                        .HasColumnType("decimal(12, 4)");
 
                     b.Property<decimal>("ScrapRate")
                         .HasColumnType("decimal(10, 4)");
@@ -4454,12 +4447,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("carNo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("cardf")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cards")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("deptName")
                         .HasColumnType("nvarchar(max)");
 
@@ -4790,14 +4777,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("requestid")
                         .HasColumnType("int");
-
-                    b.Property<string>("yBm")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
-
-                    b.Property<string>("zjgh")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
 
                     b.Property<string>("zwdj")
                         .HasColumnType("nvarchar(10)")

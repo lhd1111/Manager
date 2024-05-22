@@ -21,6 +21,10 @@ namespace iData.rs
             
         public string personReason { get; set;}
         public string carNo { get; set;}
+        //发出的card数
+        public string cardf { get; set; }
+        //收到的card数
+        public string cards { get; set; }
         public char IsAngree { get; set; } = '0';
     }
 }

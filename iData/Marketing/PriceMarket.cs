@@ -18,6 +18,9 @@ namespace iData.Marketing
         public decimal PriceSum { get; set; }
         [Display(Name = "各种类型"), MaxLength(5)]
         public string DeptType { get; set; }
+        [Display(Name = "行合计"), Column(TypeName = "decimal(12, 4)")]
+        public decimal RowSummary { get; set; } = 0;
+
         public int BomId { get; set; } = 0;
 
         public int EnumId { get; set; }
