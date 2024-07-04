@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240524030855_新增twoEnum的总类型")]
+    partial class 新增twoEnum的总类型
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,102 +47,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<string>("EnumStr")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("FmM_01")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_02")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_03")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_04")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_05")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_06")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_07")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_08")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_09")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_10")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_11")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmM_12")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmQ_01")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmQ_02")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmQ_03")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FmQ_04")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_01")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_02")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_03")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_04")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_05")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_06")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_07")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_08")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_09")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_10")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_11")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzM_12")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzQ_01")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzQ_02")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzQ_03")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("FzQ_04")
-                        .HasColumnType("decimal(15, 4)");
 
                     b.Property<decimal>("M_01")
                         .HasColumnType("decimal(15, 4)");
@@ -203,16 +109,7 @@ namespace Web.Migrations.MyDb
                     b.Property<decimal>("Q_04")
                         .HasColumnType("decimal(15, 4)");
 
-                    b.Property<decimal>("bz")
-                        .HasColumnType("decimal(15, 4)");
-
                     b.Property<decimal>("iTotal")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("iTotalFm")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("iTotalFz")
                         .HasColumnType("decimal(15, 4)");
 
                     b.Property<int>("iYear")
@@ -4036,12 +3933,17 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("CardNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CardNumberBackXY")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("CardNumberValidfDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CardNumberValidlDate")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
+                    b.Property<DateTime?>("CardNumberValidlDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CardNumberXY")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CommutingDuration")
                         .HasColumnType("nvarchar(50)")
@@ -4873,9 +4775,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("Sb")
                         .HasColumnType("decimal(8, 2)");
-
-                    b.Property<int>("SbJs")
-                        .HasColumnType("int");
 
                     b.Property<float>("SbYb")
                         .HasColumnType("real");

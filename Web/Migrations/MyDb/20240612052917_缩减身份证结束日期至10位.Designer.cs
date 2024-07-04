@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240612052917_缩减身份证结束日期至10位")]
+    partial class 缩减身份证结束日期至10位
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4873,9 +4875,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("Sb")
                         .HasColumnType("decimal(8, 2)");
-
-                    b.Property<int>("SbJs")
-                        .HasColumnType("int");
 
                     b.Property<float>("SbYb")
                         .HasColumnType("real");

@@ -28,14 +28,10 @@ namespace iData.rs
         public string PostStr { get; set; }
         [Display(Name = "身份证号")]
         public string CardNumber { get; set; }
-        [Display(Name = "身份证正面坐标")]
-        public string CardNumberXY { get; set; }
-        [Display(Name = "身份证背面坐标")]
-        public string CardNumberBackXY { get; set; }
         [Display(Name = "身份证有效期开始")]
         public DateTime? CardNumberValidfDate { get; set; }
-        [Display(Name = "身份证有效期结束")]
-        public DateTime? CardNumberValidlDate { get; set; }
+        [Display(Name = "身份证有效期结束"), MaxLength(10)]
+        public string CardNumberValidlDate { get; set; }
         [Display(Name="出生日期")]
         public DateTime Birthday { get; set; }
         [Display(Name ="性别"),MaxLength(1)]

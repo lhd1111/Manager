@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240612052306_修正身份证结束日期")]
+    partial class 修正身份证结束日期
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4040,8 +4042,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CardNumberValidlDate")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
                     b.Property<string>("CommutingDuration")
                         .HasColumnType("nvarchar(50)")
@@ -4873,9 +4875,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("Sb")
                         .HasColumnType("decimal(8, 2)");
-
-                    b.Property<int>("SbJs")
-                        .HasColumnType("int");
 
                     b.Property<float>("SbYb")
                         .HasColumnType("real");

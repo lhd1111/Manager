@@ -103,6 +103,8 @@ namespace iData.rs
         public decimal Gjj { get; set; }
         [Display(Name = "社保医保")]
         public float SbYb { get; set; }
+        [Display(Name = "社保基数")]
+        public int SbJs { get; set; } = 0;
         [Display(Name = "全勤奖"), Column(TypeName = "decimal(8, 2)")]
         public decimal iFull { get; set; }
         [Display(Name = "高温补贴"), Column(TypeName = "decimal(8, 2)")]

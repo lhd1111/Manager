@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240527100130_新增分子分母记录")]
+    partial class 新增分子分母记录
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -201,9 +203,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("decimal(15, 4)");
 
                     b.Property<decimal>("Q_04")
-                        .HasColumnType("decimal(15, 4)");
-
-                    b.Property<decimal>("bz")
                         .HasColumnType("decimal(15, 4)");
 
                     b.Property<decimal>("iTotal")
@@ -4036,12 +4035,17 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("CardNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CardNumberBackXY")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("CardNumberValidfDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CardNumberValidlDate")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
+                    b.Property<DateTime?>("CardNumberValidlDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CardNumberXY")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CommutingDuration")
                         .HasColumnType("nvarchar(50)")
@@ -4873,9 +4877,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<decimal>("Sb")
                         .HasColumnType("decimal(8, 2)");
-
-                    b.Property<int>("SbJs")
-                        .HasColumnType("int");
 
                     b.Property<float>("SbYb")
                         .HasColumnType("real");

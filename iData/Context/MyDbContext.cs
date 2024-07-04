@@ -1,5 +1,6 @@
 ﻿using iData.cg;
 using iData.cw;
+using iData.KPI;
 using iData.Marketing;
 using iData.mj;
 using iData.Mobile;
@@ -231,7 +232,8 @@ namespace iData.Context
         //售价明细表
         public DbSet<PriceSelling> PriceSellings { get; set; }
 
-
+        //KPI
+        public DbSet<KpiMain> KpiMains { get; set; }
 
 
 
