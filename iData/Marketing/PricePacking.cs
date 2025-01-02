@@ -33,6 +33,8 @@ namespace iData.Marketing
         public int PackingId { get; set; }
         [Display(Name = "各种类型"), MaxLength(5)]
         public string DeptType { get; set; }
+        [Display(Name = "折扣"), Column(TypeName = "decimal(5, 4)")]
+        public decimal Discount1 { get; set; } = 1.0m;
         public int BomId { get; set; }
         public int PriceCollectionId { get; set; }
 

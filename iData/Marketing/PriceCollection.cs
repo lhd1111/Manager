@@ -31,6 +31,8 @@ namespace iData.Marketing
         [Display(Name = "报价链接"), MaxLength(20)]
         public string UrlPath { get; set; }
         public int requestId { get; set; }
+        [Display(Name = "折扣"), Column(TypeName = "decimal(5, 4)")]
+        public decimal Discount { get; set; } = 1.0m;
         //邮件发送的依赖关系
         [Display(Name = "单项总计"), Column(TypeName = "decimal(10, 2)")]
         public decimal Total { get; set; } = 0;

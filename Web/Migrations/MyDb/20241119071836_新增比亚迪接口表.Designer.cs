@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241119071836_新增比亚迪接口表")]
+    partial class 新增比亚迪接口表
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -322,10 +324,6 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(2147483647);
 
                     b.Property<string>("Specs")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("SupplierPartCode")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -1688,9 +1686,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("ModifyUser")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
-
-                    b.Property<string>("ResByd")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("cCustomerCode")
                         .HasColumnType("nvarchar(100)")

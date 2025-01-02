@@ -105,6 +105,10 @@ namespace iData.rs
         public float SbYb { get; set; }
         [Display(Name = "社保基数")]
         public int SbJs { get; set; } = 0;
+        [Display(Name = "医保基数")]
+        public int YbJs { get; set; } = 0;
+        [Display(Name = "公积金基数")]
+        public int GjjJs { get; set; } = 0;
         [Display(Name = "全勤奖"), Column(TypeName = "decimal(8, 2)")]
         public decimal iFull { get; set; }
         [Display(Name = "高温补贴"), Column(TypeName = "decimal(8, 2)")]
@@ -151,6 +155,11 @@ namespace iData.rs
         public decimal Jb { get; set; }
         [Display(Name = "出差"), Column(TypeName = "decimal(8, 2)")]
         public decimal Cc { get; set; }
+        [Display(Name = "福利假总计"), Column(TypeName = "decimal(8, 2)")]
+        public decimal Flj { get; set; }
+        [Display(Name = "合同续签"),MaxLength(1)]
+        public string Contract { get; set; }
+
         [Display(Name = "工作总时"), Column(TypeName = "decimal(8, 2)")] 
         public decimal workZxs { get; set; }
         [Display(Name = "签名图像")]

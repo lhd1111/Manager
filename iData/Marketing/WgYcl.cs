@@ -36,6 +36,8 @@ namespace iData.Marketing
         public string CgNote { get; set; }
         [Display(Name = "行合计"), Column(TypeName = "decimal(12, 4)")]
         public decimal RowSummary { get; set; } = 0;
+        [Display(Name = "折扣"), Column(TypeName = "decimal(5, 4)")]
+        public decimal Discount1 { get; set; } = 1.0m;
 
         public int BomId { get; set; }
         public int PriceCollectionId { get; set; }

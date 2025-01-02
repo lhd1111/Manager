@@ -35,6 +35,7 @@ namespace iData.tech
         public string Pd2 { get; set; }
 
         public string Pd0 { get; set; }
+        public bool canNa { get; set; } = false;
 
         public int iOrder { get; set; }
         //允许关联模板的task,projectId=3,考虑到一对多的情况，以、分隔

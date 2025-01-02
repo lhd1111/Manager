@@ -16,7 +16,7 @@ namespace iData.Marketing
         public float AssistWorkerRate { get; set; } = 0;
         [Display(Name = "劳动率"), Column(TypeName = "decimal(5, 2)")]
         public float LaborRate { get; set; }
-        [Display(Name = "成型周期"), Column(TypeName = "decimal(5, 2)")]
+        [Display(Name = "成型周期"), Column(TypeName = "decimal(6, 2)")]
         public float Period { get; set; }
         [Display(Name = "产品合格率"), Column(TypeName = "decimal(5, 2)")]
         public decimal PassRate { get; set; } = 1;
@@ -26,6 +26,7 @@ namespace iData.Marketing
         public int FrockNumber { get; set; }
         [Display(Name = "工装金额")]
         public int FrockCost { get; set; }
+
         [Display(Name = "工时利用率"), Column(TypeName = "decimal(5, 2)")]
         public decimal ManhourRate { get; set; }
         [Display(Name = "机台利用率"), Column(TypeName = "decimal(5, 2)")]
@@ -45,6 +46,8 @@ namespace iData.Marketing
         public string DeptNote { get;set; }
         [Display(Name = "行合计"), Column(TypeName = "decimal(12, 4)")]
         public decimal RowSummary { get; set; } = 0;
+        [Display(Name = "折扣"), Column(TypeName = "decimal(5, 4)")]
+        public decimal Discount1 { get; set; } = 1.0m;
         public int MachineId { get; set; }
         public int EnumId { get; set; } = 0;
 

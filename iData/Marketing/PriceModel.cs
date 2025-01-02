@@ -33,7 +33,9 @@ namespace iData.Marketing
         public string Note { get; set; }
         [Display(Name = "组合")]
         public int Combination { get; set; }
-
+        //单行折扣
+        [Display(Name = "折扣"), Column(TypeName = "decimal(5, 4)")]
+        public decimal Discount1 { get; set; } = 1.0m;
         public int BomId { get;set;}
         public int PriceCollectionId { get; set; }
     }

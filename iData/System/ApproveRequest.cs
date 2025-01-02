@@ -14,8 +14,10 @@ namespace iData.System
         public DateTime? ApproveTime { get; set; }
         public string ApproveName { get; set; }
         public string ApproveGh { get; set; }
-        [Display(Name = "备注")]
+        [Display(Name = "申请类型")]
         public string Note { get; set; }
+        [Display(Name = "申请原因")]
+        public string Reason { get; set; }
         [Display(Name = "所属类(表名)")]
         public string Type { get; set; }
 

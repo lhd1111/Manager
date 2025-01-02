@@ -237,7 +237,7 @@ namespace iData.Context
 
 
 
-
+        public DbSet<BydInterface> BydInterfaces { get; set; }
         //二维码管理及绑定
         public DbSet<QRCode> QRCodes { get; set; }
         public DbSet<QRBind> QRBinds { get; set; }

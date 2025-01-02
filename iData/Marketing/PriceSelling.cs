@@ -52,6 +52,9 @@ namespace iData.Marketing
         //单车用量*单件机台成本
         [Column(TypeName = "decimal(15, 2)")]
         public decimal sMachine { get; set; } = 0;
+        [Display(Name = "是否计算")]
+        public bool IsTrue { get; set; } = true;
+
         [Display(Name = "零件类型"), MaxLength(5)]
         public string PartType { get; set; } 
 

@@ -14,8 +14,10 @@ namespace iData.Marketing
         public decimal PriceCost { get; set; }
         [Column(TypeName = "decimal(10, 3)")]
         public decimal PriceNumber { get; set; }
-        [Column(TypeName = "decimal(15, 2)")]
+        [Column(TypeName = "decimal(15, 4)")]
         public decimal PriceSum { get; set; }
+        [Display(Name = "备注")]
+        public string Note { get; set; }
         [Display(Name = "各种类型"), MaxLength(5)]
         public string DeptType { get; set; }
         [Display(Name = "行合计"), Column(TypeName = "decimal(12, 4)")]

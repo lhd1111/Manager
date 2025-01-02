@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240719065809_新增是否计算的标识")]
+    partial class 新增是否计算的标识
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -302,7 +304,7 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(100);
 
                     b.Property<decimal>("Number")
-                        .HasColumnType("decimal(12, 4)");
+                        .HasColumnType("decimal(10, 2)");
 
                     b.Property<string>("Paint")
                         .HasColumnType("nvarchar(100)")
@@ -310,9 +312,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Photo")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
@@ -322,10 +321,6 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(2147483647);
 
                     b.Property<string>("Specs")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("SupplierPartCode")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -648,9 +643,6 @@ namespace Web.Migrations.MyDb
                     b.Property<decimal>("DirectLabor")
                         .HasColumnType("decimal(5, 2)");
 
-                    b.Property<decimal>("Discount1")
-                        .HasColumnType("decimal(5, 4)");
-
                     b.Property<int>("EnumId")
                         .HasColumnType("int");
 
@@ -698,7 +690,7 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("decimal(5, 2)");
 
                     b.Property<decimal>("Period")
-                        .HasColumnType("decimal(6, 2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
@@ -745,9 +737,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("ModifyUser")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PriceCollectionId")
                         .HasColumnType("int");
@@ -796,9 +785,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("DeptType")
                         .HasColumnType("nvarchar(5)")
                         .HasMaxLength(5);
-
-                    b.Property<decimal>("Discount1")
-                        .HasColumnType("decimal(5, 4)");
 
                     b.Property<decimal>("ModelLost")
                         .HasColumnType("decimal(6, 2)");
@@ -878,9 +864,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("DeptType")
                         .HasColumnType("nvarchar(5)")
                         .HasMaxLength(5);
-
-                    b.Property<decimal>("Discount1")
-                        .HasColumnType("decimal(5, 4)");
 
                     b.Property<decimal>("LogisticCost")
                         .HasColumnType("decimal(7, 4)");
@@ -1094,9 +1077,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("DeptType")
                         .HasColumnType("nvarchar(5)")
                         .HasMaxLength(5);
-
-                    b.Property<decimal>("Discount1")
-                        .HasColumnType("decimal(5, 4)");
 
                     b.Property<decimal>("ExchangeRate")
                         .HasColumnType("decimal(3, 2)");
@@ -1352,9 +1332,6 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(20);
 
                     b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Reason")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
@@ -1665,55 +1642,6 @@ namespace Web.Migrations.MyDb
                     b.ToTable("UpLoadFile");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("UpLoadFile");
-                });
-
-            modelBuilder.Entity("iData.WuHu.BydInterface", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("ResByd")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cCustomerCode")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("cInvCode")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("cInvName")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<int>("iQuantity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("timestamp")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BydInterface");
                 });
 
             modelBuilder.Entity("iData.WuHu.QRBind", b =>
@@ -4513,16 +4441,94 @@ namespace Web.Migrations.MyDb
                     b.Property<decimal>("Mrsr")
                         .HasColumnType("decimal(8, 2)");
 
+                    b.Property<decimal>("NianJin")
+                        .HasColumnType("decimal(8, 2)");
+
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("OtherKou")
+                        .HasColumnType("decimal(8, 2)");
 
                     b.Property<DateTime>("Period")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal>("Shangye")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("ShiYe")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("ShuiLv")
+                        .HasColumnType("decimal(8, 2)");
+
                     b.Property<decimal>("Sr")
                         .HasColumnType("decimal(8, 2)");
 
+                    b.Property<decimal>("SuSuan")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("YangLao")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("YangLaoYan")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("YiLiao")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("ZhuFang")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sJm")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sJxjy")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sLfzj")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sLjjc")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sMrsr")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sQt")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sSr")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sSy")
+                        .HasColumnType("decimal(8, 2)");
+
                     b.Property<decimal>("sYbts")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sYkjs")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sYns")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sYnssd")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sYyjs")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sZfdk")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sZv")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sZx")
+                        .HasColumnType("decimal(8, 2)");
+
+                    b.Property<decimal>("sZykc")
                         .HasColumnType("decimal(8, 2)");
 
                     b.HasKey("Id");
@@ -4783,10 +4789,6 @@ namespace Web.Migrations.MyDb
                     b.Property<DateTime?>("ConfirmTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Contract")
-                        .HasColumnType("nvarchar(1)")
-                        .HasMaxLength(1);
-
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime2");
@@ -4838,9 +4840,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("decimal(8, 2)");
 
                     b.Property<decimal>("F_89")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("Flj")
                         .HasColumnType("decimal(8, 2)");
 
                     b.Property<decimal>("Gjj")
@@ -5988,9 +5987,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("Scope")
                         .HasColumnType("nvarchar(max)")
                         .HasMaxLength(2147483647);
-
-                    b.Property<bool>("canNa")
-                        .HasColumnType("bit");
 
                     b.Property<int>("iOrder")
                         .HasColumnType("int");
