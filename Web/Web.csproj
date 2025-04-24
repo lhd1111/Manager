@@ -187,6 +187,8 @@
     <Compile Remove="Migrations\MyDb\20240325061416_手顺评分表.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20240327081633_新增开发部门.cs" />
     <Compile Remove="Migrations\MyDb\20240327081633_新增开发部门.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20250114033255_培训新增备注.cs" />
+    <Compile Remove="Migrations\MyDb\20250114033255_培训新增备注.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

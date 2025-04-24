@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250116095900_rz-iorder")]
+    partial class rziorder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -694,9 +696,6 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<decimal>("OfflinePerson")
-                        .HasColumnType("decimal(8, 4)");
-
                     b.Property<decimal>("PassRate")
                         .HasColumnType("decimal(5, 2)");
 
@@ -711,9 +710,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("iGroup")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("sunhao")
-                        .HasColumnType("decimal(8, 4)");
 
                     b.HasKey("Id");
 
@@ -1149,55 +1145,6 @@ namespace Web.Migrations.MyDb
                     b.HasKey("Id");
 
                     b.ToTable("WgYcl");
-                });
-
-            modelBuilder.Entity("iData.Mes.POScan", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Batch")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateTime")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Num")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("POPodetailsId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Quantity")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ScanStr")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<string>("cInvCode")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("POScan");
                 });
 
             modelBuilder.Entity("iData.Mobile.WeChatUser", b =>
@@ -2494,69 +2441,6 @@ namespace Web.Migrations.MyDb
                     b.HasKey("Id");
 
                     b.ToTable("FreightSplit");
-                });
-
-            modelBuilder.Entity("iData.cw.Invoice", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CompanyName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CompanyNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateTime")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("InvoiceDate")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InvoiceNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InvoiceType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsCreate")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("docId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("hj")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<string>("requestId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("se")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.Property<decimal>("zj")
-                        .HasColumnType("decimal(8, 2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Invoice");
                 });
 
             modelBuilder.Entity("iData.cw.ModelSplitCost", b =>
@@ -4882,47 +4766,6 @@ namespace Web.Migrations.MyDb
                     b.ToTable("Reception");
                 });
 
-            modelBuilder.Entity("iData.rs.Repair", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ssmc")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("sswz")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Repair");
-                });
-
             modelBuilder.Entity("iData.rs.RzTraining", b =>
                 {
                     b.Property<int>("Id")
@@ -6804,10 +6647,6 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(100);
 
                     b.Property<string>("Specs")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("SupplierPartCode")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 

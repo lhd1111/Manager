@@ -40,6 +40,11 @@ namespace iData.Marketing
         public string MachineName { get; set; }
         [Display(Name = "机台值"), Column(TypeName = "decimal(8, 4)")]
         public decimal MachineValue { get; set; }
+        [Display(Name = "离线人工"), Column(TypeName = "decimal(8, 4)")]
+        public decimal OfflinePerson { get; set; } = 0;
+        [Display(Name = "涂装损耗"), Column(TypeName = "decimal(8, 4)")]
+        public decimal sunhao { get; set; } = 1;
+
         [Display(Name ="试验预算")]
         public int Budget { get; set; }
         [Display(Name ="备注")]

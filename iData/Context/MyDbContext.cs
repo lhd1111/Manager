@@ -2,6 +2,7 @@
 using iData.cw;
 using iData.KPI;
 using iData.Marketing;
+using iData.Mes;
 using iData.mj;
 using iData.Mobile;
 using iData.Quality;
@@ -131,7 +132,8 @@ namespace iData.Context
         public DbSet<Catering> Caterings { get; set; }
         [Display(Name = "就餐记录")]
         public DbSet<DishRecord> DishRecords { get; set; }
-
+        [Display(Name = "报修记录")]
+        public DbSet<Repair> Repairs { get; set; }
         public DbSet<Psychology> Psychologies { get; set; }
         public DbSet<Signature> Signatures { get; set; }
 
@@ -146,11 +148,16 @@ namespace iData.Context
         public DbSet<FixedAssetApply> FixedAssetApplies { get; set; }
         public DbSet<PriceCost> PriceCosts { get; set; }
         public DbSet<PriceCostDetail> PriceCostDetails { get; set; }
+        [Display(Name = "入职培训")]
+        public DbSet<RzTraining> RzTrainings { get; set; }
 
         //技术中心
         public DbSet<bom> Boms { get; set; }
         public DbSet<Project> Projects { get; set; }
-        
+
+        //Mes
+        public DbSet<POScan> POScans { get; set; }
+
 
         //系统
         public DbSet<Account> Accounts { get; set; }
@@ -185,7 +192,7 @@ namespace iData.Context
         public DbSet<CompanyBank> CompanyBanks { get; set; }
         //研发成本
         public DbSet<Expenditure> Expenditures { get; set; }
-
+        public DbSet<Invoice> Invoices { get; set; }
 
         //模具
         public DbSet<MouldState> MouldStates{get;set;}

@@ -44,6 +44,9 @@ namespace iData.tech
         public string Paint { get; set; }
         [MaxLength(100), Display(Name = "表面处理")]
         public string Surface { get; set; }
+        [MaxLength(100), Display(Name = "供应商零件编号")]
+        public string SupplierPartCode { get; set; }
+
         [MaxLength(100), Display(Name = "规格")]
         public string Specs { get; set; }
         [MaxLength(100), Display(Name = "模具号")]
