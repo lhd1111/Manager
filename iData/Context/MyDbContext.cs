@@ -157,6 +157,9 @@ namespace iData.Context
 
         //Mes
         public DbSet<POScan> POScans { get; set; }
+        public DbSet<VendorScan> VendorScans { get; set; }
+        public DbSet<ThreePoint> ThreePoints { get; set; }
+        public DbSet<ThreePointDetail> ThreePointDetails { get; set; }
 
 
         //系统

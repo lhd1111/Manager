@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250429004119_扫码修正数字表达")]
+    partial class 扫码修正数字表达
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1159,8 +1161,7 @@ namespace Web.Migrations.MyDb
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Batch")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAddOrUpdate()
@@ -1177,8 +1178,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("Num")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("Num")
+                        .HasColumnType("decimal(20, 6)");
 
                     b.Property<string>("POPodetailsId")
                         .HasColumnType("nvarchar(max)");
@@ -1186,9 +1187,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("PUArrivalVouchsId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Prt")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Quantity")
                         .HasColumnType("decimal(20, 6)");
 
@@ -1199,180 +1197,12 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("int");
 
                     b.Property<string>("cInvCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cVenCode")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
                     b.ToTable("POScan");
-                });
-
-            modelBuilder.Entity("iData.Mes.ThreePoint", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Customer")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InvCode")
-                        .HasColumnType("nvarchar(60)")
-                        .HasMaxLength(60);
-
-                    b.Property<string>("InvName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InvStd")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("SplitInt")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SplitStr")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ThreePoint");
-                });
-
-            modelBuilder.Entity("iData.Mes.ThreePointDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("GroupId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("InvCode")
-                        .HasColumnType("nvarchar(60)")
-                        .HasMaxLength(60);
-
-                    b.Property<int>("IsPass")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("ScanStr")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Source")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ThreePointId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ThreePointDetail");
-                });
-
-            modelBuilder.Entity("iData.Mes.VendorScan", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Batch")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<DateTime>("CreateTime")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Num")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("POPodetailsId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Prt")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Quantity")
-                        .HasColumnType("decimal(20, 6)");
-
-                    b.Property<string>("ScanStr")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<string>("VendorId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VendorName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cInvCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cInvCodeAll")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cInvName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cInvNameAll")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("mBatch")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("VendorScan");
                 });
 
             modelBuilder.Entity("iData.Mobile.WeChatUser", b =>
