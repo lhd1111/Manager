@@ -10,13 +10,20 @@ namespace iData.Mes
     public class ThreePointDetail:Base
     {
         public int ThreePointId { get; set; }
-
+        //自己的码
+        public string mScanStr { get; set; }
+        //对方的码
         public string ScanStr { get; set; }
+        //行id
+        public string SoId { get; set; }
+        //销售订单id
+        public string Mo_SoId { get; set; }
         [MaxLength(60)]
         public string InvCode { get; set; }
-        public int GroupId { get; set; }
-        //来源,0:fs,1:客户
-        public int Source { get; set; } = 0;
+        [MaxLength(60)]
+        public string Batch { get;set; }
+        public string Num { get; set; }
+        public int Quantity { get; set; }
         // 0:未验证, 1:通过, 2:异常
         public int IsPass { get; set; } = 0; 
     }

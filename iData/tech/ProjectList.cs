@@ -27,6 +27,8 @@ namespace iData.tech
         public string MarketGh { get; set; }
         [Display(Name = "开发部门"), MaxLength(20)]
         public string Development { get; set; }
+        [Display(Name = "设计科经理"), MaxLength(20)]
+        public string Design { get; set; }
         [Display(Name = "版本信息")]
         public int Ver { get; set; } = 1;
         [Display(Name = "开发等级"),MaxLength(1)]

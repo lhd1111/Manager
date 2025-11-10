@@ -9,6 +9,9 @@ namespace iData.rs
     [Table(nameof(FixedAsset))]
     public class FixedAsset:Base
     {
+        [Display(Name = "资产大类"), MaxLength(20)]
+        //电脑
+        public string BigType { get; set; }
         [Display(Name ="资产类型"),MaxLength(20)]
         //电脑
         public string Type { get; set; }

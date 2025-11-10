@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251009032206_二维码打印新增你工单编号")]
+    partial class 二维码打印新增你工单编号
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1302,9 +1304,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("pItemMaster")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("pQRCode")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("uLevel")
                         .HasColumnType("int");
 
@@ -1359,8 +1358,7 @@ namespace Web.Migrations.MyDb
                         .HasMaxLength(100);
 
                     b.Property<string>("Org")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
@@ -1369,7 +1367,7 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(max)")
                         .HasMaxLength(2147483647);
 
-                    b.Property<int>("eType")
+                    b.Property<int>("ePeriod")
                         .HasColumnType("int");
 
                     b.Property<int>("iOrder")
@@ -1443,6 +1441,9 @@ namespace Web.Migrations.MyDb
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
+
+                    b.Property<string>("SupplierBatch")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("cInvCode")
                         .HasColumnType("nvarchar(max)");
@@ -1561,118 +1562,6 @@ namespace Web.Migrations.MyDb
                     b.ToTable("POScan");
                 });
 
-            modelBuilder.Entity("iData.Mes.QRSCBind", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("IsDel")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Org")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("fQRCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("zQRCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("QRSCBind");
-                });
-
-            modelBuilder.Entity("iData.Mes.TempCode", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Batch")
-                        .HasColumnType("nvarchar(8)")
-                        .HasMaxLength(8);
-
-                    b.Property<DateTime>("CreateTime")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("DocNo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ItemMaster")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Mo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Num")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Org")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Prt")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ScanStr")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<string>("cInvCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cInvCodeAll")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cInvName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cInvNameAll")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("type")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TempCode");
-                });
-
             modelBuilder.Entity("iData.Mes.ThreePoint", b =>
                 {
                     b.Property<int>("Id")
@@ -1694,10 +1583,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("CustomerCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CustormerId")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
                     b.Property<string>("InvCode")
                         .HasColumnType("nvarchar(60)")
                         .HasMaxLength(60);
@@ -1708,13 +1593,6 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("InvStd")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IsDel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ItemMaster")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
 
@@ -1722,12 +1600,8 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("Org")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("SplitInt")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SplitInt")
+                        .HasColumnType("int");
 
                     b.Property<string>("SplitStr")
                         .HasColumnType("nvarchar(max)");
@@ -1756,15 +1630,15 @@ namespace Web.Migrations.MyDb
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<int>("GroupId")
+                        .HasColumnType("int");
+
                     b.Property<string>("InvCode")
                         .HasColumnType("nvarchar(60)")
                         .HasMaxLength(60);
 
                     b.Property<int>("IsPass")
                         .HasColumnType("int");
-
-                    b.Property<string>("Mo_SoId")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ModifyTime")
                         .HasColumnType("datetime2");
@@ -1782,14 +1656,11 @@ namespace Web.Migrations.MyDb
                     b.Property<string>("ScanStr")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SoId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Source")
+                        .HasColumnType("int");
 
                     b.Property<int>("ThreePointId")
                         .HasColumnType("int");
-
-                    b.Property<string>("mScanStr")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -1831,8 +1702,8 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("Prt")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Quantity")
+                        .HasColumnType("decimal(20, 6)");
 
                     b.Property<string>("ScanStr")
                         .HasColumnType("nvarchar(max)");
@@ -1871,48 +1742,6 @@ namespace Web.Migrations.MyDb
                     b.HasKey("Id");
 
                     b.ToTable("VendorScan");
-                });
-
-            modelBuilder.Entity("iData.Mes.VendorScans", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateTime")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreateUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime?>("ModifyTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifyUser")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Num")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ScanStr")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Source")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("VendorScanId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("VendorScans");
                 });
 
             modelBuilder.Entity("iData.Mobile.WeChatUser", b =>
@@ -4477,10 +4306,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<string>("AssetNumber")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BigType")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
 
                     b.Property<DateTime?>("CheckDate")
                         .HasColumnType("datetime2");

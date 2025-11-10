@@ -160,6 +160,18 @@ namespace iData.Context
         public DbSet<VendorScan> VendorScans { get; set; }
         public DbSet<ThreePoint> ThreePoints { get; set; }
         public DbSet<ThreePointDetail> ThreePointDetails { get; set; }
+        public DbSet<Bao_gy> Bao_gys { get; set; }
+        public DbSet<Bao_GyUsed> Bao_GyUseds { get; set; }
+        public DbSet<MaterialUsed> MaterialUseds { get; set; }
+        public DbSet<BaoGyLog> BaoGyLogs { get; set; }
+        public DbSet<BaoHouse> BaoHouses { get; set; }
+        public DbSet<BarcodePrt> BarcodePrts { get; set; }
+        public DbSet<QRSCBind> QRSCBinds { get; set; }
+        public DbSet<TempCode> TempCodes { get; set; }
+        public DbSet<VendorScans> VendorScanses { get; set; }
+        
+
+
 
 
         //系统

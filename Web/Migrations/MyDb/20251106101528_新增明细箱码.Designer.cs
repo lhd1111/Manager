@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iData.Context;
 
 namespace Web.Migrations.MyDb
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251106101528_新增明细箱码")]
+    partial class 新增明细箱码
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1901,8 +1903,8 @@ namespace Web.Migrations.MyDb
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<string>("ScanStr")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ScanStr")
+                        .HasColumnType("int");
 
                     b.Property<string>("Source")
                         .HasColumnType("nvarchar(max)");
@@ -4477,10 +4479,6 @@ namespace Web.Migrations.MyDb
 
                     b.Property<string>("AssetNumber")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BigType")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
 
                     b.Property<DateTime?>("CheckDate")
                         .HasColumnType("datetime2");

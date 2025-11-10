@@ -189,6 +189,8 @@
     <Compile Remove="Migrations\MyDb\20240327081633_新增开发部门.Designer.cs" />
     <Compile Remove="Migrations\MyDb\20250114033255_培训新增备注.cs" />
     <Compile Remove="Migrations\MyDb\20250114033255_培训新增备注.Designer.cs" />
+    <Compile Remove="Migrations\MyDb\20250910064249_修正使用表中开始时间.cs" />
+    <Compile Remove="Migrations\MyDb\20250910064249_修正使用表中开始时间.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
